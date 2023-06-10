@@ -4,42 +4,82 @@
  * SPDX-License-Identifier: MIT
  */
 
+#define AL 0
+#define FN 1
+#define SB 2
+#define NV 3
+
+#define HY RS(RC(RA(RGUI)))
+#define HP(key) RS(RC(RA(RG(key))))
+#define GU(key) RG(RA(key))
+#define BU C_BRI_UP
+#define BD C_BRI_DN
+#define VU C_VOL_UP
+#define VD C_VOL_DN
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <125>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp >;
+        };
+
+        pm: pinky_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "PINKY_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp >;
+        };
+    };
+
+    chosen { zmk,matrix_transform = &layout_grid_transform; };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB  |  Q   |  W   |  E   |  R   |  T   |   Y   |  U    |  I   |  O   |   P   | BSPC  |
-            // |  ESC  |  A   |  S   |  D   |  F   |  G   |   H   |  J    |  K   |  L   |   ;   |  '    |
-            // | SHIFT |  Z   |  X   |  C   |  V   |  B   |   N   |  M    |  ,   |  .   |   /   |  RET  |
-            // |       | LCTL | LALT | LGUI | LOWR |     SPACE    |  RAIS | LARW | DARW | UARW  |  RARW |
-            bindings = <
-                &kp TAB  &kp Q    &kp W &kp E &kp R &kp T  &kp Y   &kp U  &kp I    &kp O   &kp P    &kp BSPC
-                &kp ESC  &kp A    &kp S &kp D &kp F &kp G  &kp H   &kp J  &kp K    &kp L   &kp SEMI &kp SQT
-                &kp LSHFT &kp Z    &kp X &kp C &kp V &kp B  &kp N   &kp M  &kp COMMA &kp DOT &kp SLASH &kp RET
-                &trans   &kp LCTL &kp LALT &kp LGUI &mo 1 &trans &kp SPACE &mo 2 &kp LEFT &kp DOWN &kp UP &kp RIGHT
+            AL = <
+                &kp Q        &kp W        &kp E       &kp R         &kp T     &none &none  &kp Y    &kp U         &kp I       &kp O        &kp P
+                &pm LALT A   &hm LCTRL S  &hm LGUI D  &hm LSHFT F   &kp F     &none &none  &kp H    &hm RSHFT J   &hm RGUI K  &hm RCTRL L  &pm RALT SEMI
+                &kp Z        &kp X        &kp C       &kp V         &kp B     &none &none  &kp N    &kp M         &kp COMMA   &kp DOT      &kp SLASH
+                &none        &none        &mo FN      &lt SPACE SB  &none     &none &none  &kp CAPS &lt SPACE NV  &kp HYPR    &none        &none
             >;
         };
 
-        lower {
+        FN {
             bindings = <
-                &kp LS(GRAVE) &kp LS(N1) &kp LS(N2) &kp LS(N3) &kp LS(N4) &kp LS(N5) &kp LS(N6) &kp LS(N7) &kp LS(N8) &kp LS(N9) &kp LS(N0) &kp DEL
-                &kp DEL &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp UNDER &kp PLUS &kp LBRC &kp RBRC &kp PIPE
-                &trans &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12 &kp LS(HASH) &kp LS(BSLH) &kp HOME &kp END &trans
-                &trans &trans &trans &trans &trans &trans &trans &trans &kp C_NEXT &kp C_VOL_DN &kp C_VOL_UP &kp C_PP
+                &none        &none        &none       &none         &none     &none &none  &none    &kp F1        &kp F2      &kp F3       &kp F4
+                &kp LALT     &kp LCTRL    &kp LGUI    &kp LSHFT     &none     &none &none  &none    &kp F5        &kp F6      &kp F7       &kp F8
+                &none        &none        &none       &none         &none     &none &none  &none    &kp F9        &kp F10     &kp F11      &kp F12
+                &none        &none        &trans      &none         &none     &none &none  &none    &none         &none       &none        &none
             >;
         };
 
-        raise {
+        SB {
             bindings = <
-                &kp GRAVE &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp BSPC
-                &kp DEL &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &kp BSLH
-                &trans &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12 &kp HASH &kp BSLH &kp PG_UP &kp PG_DN &trans
-                &sys_reset &bootloader &trans &trans &trans &trans &trans &trans &kp C_NEXT &kp C_VOL_DN &kp C_VOL_UP &kp C_PP
+                &kp GRAVE    &none        &none       &none         &none     &none &none  &none    &kp LBKT      &kp RBKT    &kp MINUS    &kp EQUAL
+                &pm LALT N1  &hm LCTRL N2 &hm LGUI N3 &hm LSHFT N4  &kp N5    &none &none  &kp N6   &hm RSHFT N7  &hm RGUI N8 &hm RCTRL N9 &pm RALT N0
+                &kp BD       &kp BU       &kp VD      &kp VU        &none     &none &none  &kp SQT  &kp LT        &kp GT      &kp BSLH     &kp FSLH
+                &none        &none        &none       &trans        &none     &none &none  &none    &kp RET       &none       &none        &none            >;
+        };
+
+        NV {
+            bindings = <
+                &kp ESC      &none        &kp UP      &none         &kp T     &none &none  &kp Y    &kp U         &kp I       &kp O        &kp P
+                &none        &kp LEFT     &kp DOWN    &kp RIGHT     &kp GU(C) &none &none  &kp H    &hm RSHFT J   &hm RGUI K  &hm RCTRL L  &pm RALT SEMI
+                &none        &kp LC(LEFT) &kp LC(UP)  &kp LC(RIGHT) &kp GU(S) &none &none  &kp N    &kp M         &kp COMMA   &kp DOT      &kp SLASH
+                &none        &none        &mo FN      &lt SPACE SB  &kp CAPS  &none &none  &mo NV   &lt SPACE SY  &kp HYPR    &none        &none
             >;
         };
     };
