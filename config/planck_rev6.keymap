@@ -50,9 +50,9 @@
 
         AL { bindings = <
                 &kp Q        &kp W        &kp E       &kp R         &kp T     &none &none  &kp Y    &kp U         &kp I       &kp O        &kp P
-                &pm LALT A   &hm LCTRL S  &hm LGUI D  &hm LSHFT F   &kp F     &none &none  &kp H    &hm RSHFT J   &hm RGUI K  &hm RCTRL L  &pm RALT SEMI
+                &pm LALT A   &hm LCTRL S  &hm LGUI D  &hm LSHFT F   &kp G     &none &none  &kp H    &hm RSHFT J   &hm RGUI K  &hm RCTRL L  &pm RALT SEMI
                 &kp Z        &kp X        &kp C       &kp V         &kp B     &none &none  &kp N    &kp M         &kp COMMA   &kp DOT      &kp QMARK
-                &none        &none        &mo FN      &lt SPACE N1  &kp CAPS  &none &none  &kp HYPR &lt SPACE N2  &mo NV      &none        &none
+                &none        &none        &mo FN      &lt N1 SPACE  &kp CAPS  &none &none  &kp HYPR &lt N2 SPACE  &mo NV      &none        &none
             >;
         };
 
