@@ -6,11 +6,10 @@
 
 #define AL 0
 #define FN 1
-#define SB 2
+#define NB 2
 #define NV 3
 
-#define HY RS(RC(RA(RGUI)))
-#define HP(key) RS(RC(RA(RG(key))))
+#define HYPR RS(RC(RA(RGUI)))
 #define GU(key) RG(RA(key))
 #define BU C_BRI_UP
 #define BD C_BRI_DN
@@ -52,8 +51,8 @@
             AL = <
                 &kp Q        &kp W        &kp E       &kp R         &kp T     &none &none  &kp Y    &kp U         &kp I       &kp O        &kp P
                 &pm LALT A   &hm LCTRL S  &hm LGUI D  &hm LSHFT F   &kp F     &none &none  &kp H    &hm RSHFT J   &hm RGUI K  &hm RCTRL L  &pm RALT SEMI
-                &kp Z        &kp X        &kp C       &kp V         &kp B     &none &none  &kp N    &kp M         &kp COMMA   &kp DOT      &kp SLASH
-                &none        &none        &mo FN      &lt SPACE SB  &none     &none &none  &kp CAPS &lt SPACE NV  &kp HYPR    &none        &none
+                &kp Z        &kp X        &kp C       &kp V         &kp B     &none &none  &kp N    &kp M         &kp COMMA   &kp DOT      &kp QMARK
+                &none        &none        &mo FN      &lt SPACE NB  &kp CAPS  &none &none  &kp HYPR &lt SPACE NB  &mo NV      &none        &none
             >;
         };
 
@@ -62,24 +61,24 @@
                 &none        &none        &none       &none         &none     &none &none  &none    &kp F1        &kp F2      &kp F3       &kp F4
                 &kp LALT     &kp LCTRL    &kp LGUI    &kp LSHFT     &none     &none &none  &none    &kp F5        &kp F6      &kp F7       &kp F8
                 &none        &none        &none       &none         &none     &none &none  &none    &kp F9        &kp F10     &kp F11      &kp F12
-                &none        &none        &trans      &none         &none     &none &none  &none    &none         &none       &none        &none
+                &none        &none        &none       &none         &none     &none &none  &none    &none         &none       &none        &none
             >;
         };
 
-        SB {
+        NB {
             bindings = <
-                &kp GRAVE    &none        &none       &none         &none     &none &none  &none    &kp LBKT      &kp RBKT    &kp MINUS    &kp EQUAL
+                &kp GRAVE    &kp SQT      &kp MINUS   &kp EQUAL     &none     &none &none  &none    &kp LBKT      &kp RBKT    &kp BSPC     &kp DEL
                 &pm LALT N1  &hm LCTRL N2 &hm LGUI N3 &hm LSHFT N4  &kp N5    &none &none  &kp N6   &hm RSHFT N7  &hm RGUI N8 &hm RCTRL N9 &pm RALT N0
-                &kp BD       &kp BU       &kp VD      &kp VU        &none     &none &none  &kp SQT  &kp LT        &kp GT      &kp BSLH     &kp FSLH
-                &none        &none        &none       &trans        &none     &none &none  &none    &kp RET       &none       &none        &none            >;
+                &kp BD       &kp BU       &kp VD      &kp VU        &none     &none &none  &none    &kp LT        &kp GT      &kp BSLH     &kp FSLH
+                &none        &none        &none       &kp TAB       &none     &none &none  &none    &kp RET       &none       &none        &none            >;
         };
 
         NV {
             bindings = <
-                &kp ESC      &none        &kp UP      &none         &kp T     &none &none  &kp Y    &kp U         &kp I       &kp O        &kp P
-                &none        &kp LEFT     &kp DOWN    &kp RIGHT     &kp GU(C) &none &none  &kp H    &hm RSHFT J   &hm RGUI K  &hm RCTRL L  &pm RALT SEMI
-                &none        &kp LC(LEFT) &kp LC(UP)  &kp LC(RIGHT) &kp GU(S) &none &none  &kp N    &kp M         &kp COMMA   &kp DOT      &kp SLASH
-                &none        &none        &mo FN      &lt SPACE SB  &kp CAPS  &none &none  &mo NV   &lt SPACE SY  &kp HYPR    &none        &none
+                &kp ESC      &none        &kp UP      &none         &none     &none &none  &none    &none         &none       &none        &none
+                &none        &kp LEFT     &kp DOWN    &kp RIGHT     &kp GU(C) &none &none  &none    &kp RSHFT     &kp RGUI    &kp RCTRL    &kp RALT
+                &none        &kp LC(LEFT) &kp LC(UP)  &kp LC(RIGHT) &kp GU(S) &none &none  &none    &kp M         &kp COMMA   &kp DOT      &none
+                &none        &none        &none       &none         &none     &none &none  &none    &none         &none       &none        &none
             >;
         };
     };
