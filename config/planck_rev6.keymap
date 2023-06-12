@@ -43,11 +43,11 @@
         };
 
         bkdl: backspace_delete {
-            compatible = "zmk,behavior-mod-tap";
+            compatible = "zmk,behavior-mod-morph";
             label = "BACKSPACE_DELETE";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             bindings = <&kp BSPC>, <&kp DEL>;
-            mods = <(MOD_LSHIFT | MOD_RSHIFT)>;
+            mods = <(MOD_LSHIFT)>;
         };
     };
 
