@@ -9,10 +9,9 @@
 
 #define AL 0
 #define FN 1
-#define NL 2
-#define NR 3
-#define SY 4
-#define NV 5
+#define SY 2
+#define NB 3
+#define NV 4
 
 #define HYPR RS(RC(RA(RGUI)))
 #define GU(key) RG(RA(key))
@@ -42,6 +41,14 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp >;
         };
+
+        bkdl: backspace_delete {
+            compatible = "zmk,behavior-mod-tap";
+            label = "BACKSPACE_DELETE";
+            #binding-cells = <2>;
+            bindings = <&kp BSPC>, <&kp DEL>;
+            mods = <(MOD_LSHIFT | MOD_RSHIFT)>;
+        };
     };
 
     chosen { zmk,matrix_transform = &layout_grid_transform; };
@@ -53,46 +60,37 @@
                 &kp Q        &kp W        &kp E       &kp R         &kp T     &none &none  &kp Y    &kp U        &kp I       &kp O        &kp P
                 &pm LALT A   &hm LCTRL S  &hm LGUI D  &hm LSHFT F   &kp G     &none &none  &kp H    &hm RSHFT J  &hm RGUI K  &hm RCTRL L  &pm RALT SEMI
                 &kp Z        &kp X        &kp C       &kp V         &kp B     &none &none  &kp N    &kp M        &kp COMMA   &kp DOT      &kp QMARK
-                &none        &none        &mo FN      &lt NL SPACE  &kp CAPS  &none &none  &kp HYPR &lt NR SPACE &mo NV      &none        &none
+                &none        &none        &mo FN      &lt SY SPACE  &kp CAPS  &none &none  &kp HYPR &lt NB SPACE &mo NV      &none        &none
             >;
         };
 
         FN { bindings = <
-                &none        &none        &none       &none         &none     &none &none  &none    &kp F1       &kp F2      &kp F3       &kp F4
-                &kp LALT     &kp LCTRL    &kp LGUI    &kp LSHFT     &none     &none &none  &none    &kp F5       &kp F6      &kp F7       &kp F8
-                &none        &none        &none       &none         &none     &none &none  &none    &kp F9       &kp F10     &kp F11      &kp F12
-                &none        &none        &trans      &none         &none     &none &none  &none    &none        &none       &none        &none
+                &kp ESC      &none        &none       &none         &none     &none &none  &none     &kp F1       &kp F2      &kp F3       &kp F4
+                &kp LALT     &kp LCTRL    &kp LGUI    &kp LSHFT     &none     &none &none  &none     &kp F5       &kp F6      &kp F7       &kp F8
+                &none        &none        &none       &none         &none     &none &none  &none     &kp F9       &kp F10     &kp F11      &kp F12
+                &none        &none        &trans      &none         &none     &none &none  &none     &none        &none       &none        &none
             >;
         };
 
-        NL { bindings = <
-                &kp GRAVE    &kp SQT      &kp MINUS   &kp EQUAL     &none     &none &none  &none    &kp LBKT     &kp RBKT    &kp BSPC     &kp DEL
-                &pm LALT N1  &hm LCTRL N2 &hm LGUI N3 &mo SY        &kp N5    &none &none  &kp N6   &hm RSHFT N7 &hm RGUI N8 &hm RCTRL N9 &pm RALT N0
-                &kp BD       &kp BU       &kp VD      &kp VU        &none     &none &none  &none    &kp LT       &kp GT      &kp BSLH     &kp FSLH
-                &none        &none        &none       &trans        &none     &none &none  &none    &kp RET      &none       &none        &none            >;
-        };
-
-        NR { bindings = <
-                &kp GRAVE    &kp SQT      &kp MINUS   &kp EQUAL     &none     &none &none  &none    &kp LBKT     &kp RBKT    &kp BSPC     &kp DEL
-                &pm LALT N1  &hm LCTRL N2 &hm LGUI N3 &hm LSHFT N4  &kp N5    &none &none  &kp N6   &hm RSHFT N7 &hm RGUI N8 &hm RCTRL N9 &pm RALT N0
-                &kp BD       &kp BU       &kp VD      &kp VU        &none     &none &none  &none    &kp LT       &kp GT      &kp BSLH     &kp FSLH
-                &none        &none        &none       &kp TAB       &none     &none &none  &none    &trans       &none       &none        &none            >;
-        };
-
-
         SY { bindings = <
-                &none        &none        &none       &none         &none     &none &none  &none    &kp LBRC     &kp RBRC    &kp BSPC     &kp DEL
-                &none        &none        &none       &trans        &none     &none &none  &none    &kp LPAR     &kp RPAR    &kp AMPS     &kp STAR
-                &none        &none        &none       &none         &none     &none &none  &none    &kp LT       &kp GT      &kp PIPE     &kp FSLH
-                &none        &none        &none       &none         &none     &none &none  &none    &kp SPACE    &none       &none        &none            >;
+                &kp ESC      &none        &none       &none         &none     &none &none  &kp GRAVE &kp LPAR     &kp RPAR    &kp SQT      &bkdl
+                &kp LALT     &kp LCTRL    &kp LGUI    &kp LSHFT     &none     &none &none  &kp EQUAL &kp LBRC     &kp RBRC    &kp AMPS     &kp STAR
+                &none        &none        &none       &none         &none     &none &none  &kp MINUS &kp LT       &kp GT      &kp PIPE     &kp FSLH
+                &none        &none        &none       &trans        &none     &none &none  &none     &kp TAB      &kp RET     &none        &none            >;
+        };
 
+        NB { bindings = <
+                &kp ESC      &none        &none       &none         &none     &none &none  &none     &none        &none       &none        &bkdl
+                &pm LALT N1  &hm LCTRL N2 &hm LGUI N3 &hm LSHFT N4  &kp N5    &none &none  &kp N6    &hm RSHFT N7 &hm RGUI N8 &hm RCTRL N9 &pm RALT N0
+                &kp BD       &kp BU       &kp VD      &kp VU        &none     &none &none  &none     &kp LT       &kp GT      &kp BSLH     &kp FSLH
+                &none        &none        &none       &kp TAB       &none     &none &none  &none     &trans       &none       &none        &none            >;
         };
 
         NV { bindings = <
-                &kp ESC      &none        &kp UP      &none         &none     &none &none  &none    &none        &none       &none        &none
-                &none        &kp LEFT     &kp DOWN    &kp RIGHT     &kp GU(C) &none &none  &none    &kp RSHFT    &kp RGUI    &kp RCTRL    &kp RALT
-                &none        &kp LC(LEFT) &kp LC(UP)  &kp LC(RIGHT) &kp GU(S) &none &none  &none    &kp M        &kp COMMA   &kp DOT      &none
-                &none        &none        &none       &none         &none     &none &none  &none    &none        &trans      &none        &none
+                &kp ESC      &none        &kp UP      &none         &none     &none &none  &none     &none        &none       &none        &bkdl
+                &none        &kp LEFT     &kp DOWN    &kp RIGHT     &kp GU(C) &none &none  &none     &kp RSHFT    &kp RGUI    &kp RCTRL    &kp RALT
+                &none        &kp LC(LEFT) &kp LC(UP)  &kp LC(RIGHT) &kp GU(S) &none &none  &none     &kp M        &kp COMMA   &kp DOT      &none
+                &none        &none        &none       &none         &none     &none &none  &none     &none        &trans      &none        &none
             >;
         };
     };
