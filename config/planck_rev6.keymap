@@ -42,12 +42,13 @@
             bindings = <&kp>, <&kp >;
         };
 
-        bkdl: backspace_delete {
+        bspc_del: backspace_delete {
             compatible = "zmk,behavior-mod-morph";
             label = "BACKSPACE_DELETE";
             #binding-cells = <0>;
-            bindings = <&kp BSPC>, <&kp DEL>;
-            mods = <(MOD_LSHIFT)>;
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
         };
     };
 
@@ -73,21 +74,21 @@
         };
 
         SY { bindings = <
-                &kp ESC      &none        &none       &none         &none     &none &none  &kp GRAVE &kp LPAR     &kp RPAR    &kp SQT      &bkdl
+                &kp ESC      &none        &none       &none         &none     &none &none  &kp GRAVE &kp LPAR     &kp RPAR    &kp SQT      &bspc_del
                 &kp LALT     &kp LCTRL    &kp LGUI    &kp LSHFT     &none     &none &none  &kp EQUAL &kp LBRC     &kp RBRC    &kp AMPS     &kp STAR
                 &none        &none        &none       &none         &none     &none &none  &kp MINUS &kp LT       &kp GT      &kp PIPE     &kp FSLH
                 &none        &none        &none       &trans        &none     &none &none  &none     &kp TAB      &kp RET     &none        &none            >;
         };
 
         NB { bindings = <
-                &kp ESC      &none        &none       &none         &none     &none &none  &none     &none        &none       &none        &bkdl
+                &kp ESC      &none        &none       &none         &none     &none &none  &none     &none        &none       &none        &bspc_del
                 &pm LALT N1  &hm LCTRL N2 &hm LGUI N3 &hm LSHFT N4  &kp N5    &none &none  &kp N6    &hm RSHFT N7 &hm RGUI N8 &hm RCTRL N9 &pm RALT N0
                 &kp BD       &kp BU       &kp VD      &kp VU        &none     &none &none  &none     &kp LT       &kp GT      &kp BSLH     &kp FSLH
                 &none        &none        &none       &kp TAB       &none     &none &none  &none     &trans       &none       &none        &none            >;
         };
 
         NV { bindings = <
-                &kp ESC      &none        &kp UP      &none         &none     &none &none  &none     &none        &none       &none        &bkdl
+                &kp ESC      &none        &kp UP      &none         &none     &none &none  &none     &none        &none       &none        &bspc_del
                 &none        &kp LEFT     &kp DOWN    &kp RIGHT     &kp GU(C) &none &none  &none     &kp RSHFT    &kp RGUI    &kp RCTRL    &kp RALT
                 &none        &kp LC(LEFT) &kp LC(UP)  &kp LC(RIGHT) &kp GU(S) &none &none  &none     &kp M        &kp COMMA   &kp DOT      &none
                 &none        &none        &none       &none         &none     &none &none  &none     &none        &trans      &none        &none
