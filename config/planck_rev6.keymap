@@ -75,7 +75,7 @@
 
         SY { bindings = <
                 &kp ESC      &none        &none       &none         &none     &none &none  &kp GRAVE &kp LPAR     &kp RPAR    &kp SQT      &bspc_del
-                &kp LALT     &kp LCTRL    &kp LGUI    &kp LSHFT     &none     &none &none  &kp EQUAL &kp LBRC     &kp RBRC    &kp AMPS     &kp STAR
+                &kp LALT     &kp LCTRL    &kp LGUI    &kp LSHFT     &none     &none &none  &kp EQUAL &kp LBKT     &kp RBKT    &kp AMPS     &kp STAR
                 &none        &none        &none       &none         &none     &none &none  &kp MINUS &kp LT       &kp GT      &kp PIPE     &kp FSLH
                 &none        &none        &none       &trans        &none     &none &none  &none     &kp TAB      &kp RET     &none        &none            >;
         };
