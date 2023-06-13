@@ -86,8 +86,8 @@
         };
 
         SY { bindings = <
-                &none        &none        &none       &none         &none     &none &none  &kp GRAVE &kp LPAR     &kp RPAR    &kp MINUS    &kp EQUAL
-                &kp LALT     &kp LCTRL    &kp LGUI    &kp LSHFT     &none     &none &none  &none     &kp LBKT     &kp RBKT    &kp SQT      &kp SEMI
+                &none        &none        &none       &none         &none     &none &none  &none     &kp LPAR     &kp RPAR    &kp MINUS    &kp EQUAL
+                &kp LALT     &kp LCTRL    &kp LGUI    &kp LSHFT     &none     &none &none  &kp GRAVE &kp LBKT     &kp RBKT    &kp SQT      &kp SEMI
                 &none        &none        &none       &none         &none     &none &none  &none     &kp LT       &kp GT      &kp BSLH     &kp FSLH
                 &none        &none        &none       &trans        &none     &none &none  &none     &kp TAB      &kp RET     &none        &none
             >;
