@@ -52,7 +52,7 @@
             label = "MEDIA_UP";
             #binding-cells = <0>;
             bindings = <&kp C_VOL_UP>, <&kp C_BRI_UP>;
-            mods = <(MOD_LSFT)>;
+            mods = <(MOD_RSFT)>;
         };
 
         dn: media_dn {
@@ -60,7 +60,7 @@
             label = "MEDIA_DN";
             #binding-cells = <0>;
             bindings = <&kp C_VOL_DN>, <&kp C_BRI_DN>;
-            mods = <(MOD_LSFT)>;
+            mods = <(MOD_RSFT)>;
         };
     };
 
