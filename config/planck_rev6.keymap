@@ -133,10 +133,10 @@
         };
 
         NV { bindings = <
-                &kp ESC      &none        &kp UP      &none         &none       &none &none &none     &none        &none       &none        &bspc_del
-                &mup         &kp LEFT     &kp DOWN    &kp RIGHT     &kp GA(C)   &none &none &none     &kp RSHFT    &kp RGUI    &kp RCTRL    &kp RALT
-                &mdn         &kp LC(LEFT) &kp LC(UP)  &kp LC(RIGHT) &kp GA(S)   &none &none &none     &kp M        &kp COMMA   &kp DOT      &none
-                &none        &none        &none       &none         &none       &none &none &none     &none        &trans      &none        &none
+                &kp ESC      &none        &kp UP      &none         &none       &none &none &none     &kp C_BRI_UP &kp C_BRI_DN &none        &bspc_del
+                &mup         &kp LEFT     &kp DOWN    &kp RIGHT     &kp GA(C)   &none &none &none     &kp RSHFT    &kp RGUI     &kp RCTRL    &kp RALT
+                &mdn         &kp LC(LEFT) &kp LC(UP)  &kp LC(RIGHT) &kp GA(S)   &none &none &none     &kp M        &kp COMMA    &kp DOT      &none
+                &none        &none        &none       &none         &none       &none &none &none     &none        &trans       &none        &none
             >;
         };
     };
