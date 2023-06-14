@@ -14,7 +14,7 @@
 #define NV 4
 
 #define HYPR RS(RC(RA(RGUI)))
-#define GU(key) RG(RA(key))
+#define GA(key) RG(RA(key))
 
 / {
     behaviors {
@@ -46,20 +46,52 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        up: media_up {
+        mup: media_up {
             compatible = "zmk,behavior-mod-morph";
             label = "MEDIA_UP";
             #binding-cells = <0>;
-            bindings = <&kp C_VOL_UP>, <&kp C_BRI_UP>;
+            bindings = <&kp C_VOL_UP>, <&kp F14>;
             mods = <(MOD_RSFT)>;
         };
 
-        dn: media_dn {
+        mdn: media_dn {
             compatible = "zmk,behavior-mod-morph";
             label = "MEDIA_DN";
             #binding-cells = <0>;
-            bindings = <&kp C_VOL_DN>, <&kp C_BRI_DN>;
+            bindings = <&kp C_VOL_DN>, <&kp F15>;
             mods = <(MOD_RSFT)>;
+        };
+
+        S7: special_7 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SPECIAL_7";
+            #binding-cells = <0>;
+            bindings = <&kp N7>, <&kp LPAR>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        S8: special_8 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SPECIAL_8";
+            #binding-cells = <0>;
+            bindings = <&kp N8>, <&kp RPAR>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        S9: special_9 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SPECIAL_8";
+            #binding-cells = <0>;
+            bindings = <&kp N9>, <&kp AMPS>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        S0: special_0 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SPECIAL_0";
+            #binding-cells = <0>;
+            bindings = <&kp N9>, <&kp STAR>;
+            mods = <(MOD_LSFT)>;
         };
     };
 
@@ -71,39 +103,39 @@
         AL { bindings = <
                 &kp Q        &kp W        &kp E       &kp R         &kp T       &none &none &kp Y    &kp U         &kp I       &kp O        &kp P
                 &pm LALT A   &hm LCTRL S  &hm LGUI D  &hm LSHFT F   &kp G       &none &none &kp H    &hm RSHFT J   &hm RGUI K  &hm RCTRL L  &pm RALT SEMI
-                &kp Z        &kp X        &kp C       &kp V         &kp B       &none &none &kp N    &kp M         &kp COMMA   &kp DOT      &kp QMARK
-                &none        &none        &mo FN      &lt SY TAB    &kp CAPS    &none &none &kp HYPR &lt NB SPACE  &mo NV      &none        &none
+                &kp Z        &kp X        &kp C       &kp V         &kp B       &none &none &kp N    &kp M         &kp COMMA   &kp DOT      &kp FSLH
+                &none        &none        &mo FN      &lt S1 TAB    &kp CAPS    &none &none &kp HYPR &lt S2 SPACE  &mo NV      &none        &none
             >;
         };
 
         FN { bindings = <
-                &none        &none        &none       &none         &none       &none &none &none     &kp F1       &kp F2      &kp F3       &kp F4
+                &kp ESC      &none        &none       &none         &none       &none &none &none     &kp F1       &kp F2      &kp F3       &kp F4
                 &kp LALT     &kp LCTRL    &kp LGUI    &kp LSHFT     &none       &none &none &none     &kp F5       &kp F6      &kp F7       &kp F8
                 &none        &none        &none       &none         &none       &none &none &none     &kp F9       &kp F10     &kp F11      &kp F12
                 &none        &none        &trans      &none         &none       &none &none &none     &none        &none       &none        &none
             >;
         };
 
-        SY { bindings = <
-                &kp EXCL     &kp AT       &kp HASH    &kp DOLLAR    &kp PERCENT &none &none &kp CARET &kp LPAR     &kp RPAR    &kp MINUS    &kp EQUAL
-                &kp LALT     &kp LCTRL    &kp LGUI    &kp LSHFT     &none       &none &none &kp GRAVE &kp LBKT     &kp RBKT    &kp SQT      &kp SEMI
+        S1 { bindings = <
+                &kp GRAVE    &none        &kp MINUS   &kp EQUAL     &none       &none &none &none     &kp LBKT     &kp RBKT    &kp SQT      &bspc_del
+                &pm LALT N1  &hm LCTRL N2 &hm LGUI N3 &hm LSHFT N4  &kp N5      &none &none &kp N6    &hm RSHFT S7 &hm RGUI S8 &hm RCTRL S9 &pm RALT S0
                 &none        &none        &none       &none         &none       &none &none &none     &kp LT       &kp GT      &kp BSLH     &kp FSLH
                 &none        &none        &none       &trans        &none       &none &none &none     &kp SPACE    &kp RET     &none        &none
             >;
         };
 
-        NB { bindings = <
-                &kp EXCL     &kp AT       &kp HASH    &kp DOLLAR    &kp PERCENT &none &none &kp CARET &kp AMPS     &kp STAR    &kp DQT      &bspc_del
-                &pm LALT N1  &hm LCTRL N2 &hm LGUI N3 &hm LSHFT N4  &kp N5      &none &none &kp N6    &hm RSHFT N7 &hm RGUI N8 &hm RCTRL N9 &pm RALT N0
-                &none        &none        &none       &none         &none       &none &none &none     &none        &none       &none        &none
+        S2 { bindings = <
+                &kp GRAVE    &none        &kp MINUS   &kp EQUAL     &none       &none &none &none     &kp LBKT     &kp RBKT    &kp SQT      &bspc_del
+                &pm LALT N1  &hm LCTRL N2 &hm LGUI N3 &hm LSHFT N4  &kp N5      &none &none &kp N6    &hm RSHFT S7 &hm RGUI S8 &hm RCTRL S9 &pm RALT S0
+                &none        &none        &none       &none         &none       &none &none &none     &kp LT       &kp GT      &kp BSLH     &kp FSLH
                 &none        &none        &none       &none         &none       &none &none &none     &trans       &none       &none        &none
             >;
         };
 
         NV { bindings = <
-                &kp ESC      &none        &kp UP      &none         &none       &none &none &none     &none        &none       &none        &none
-                &up          &kp LEFT     &kp DOWN    &kp RIGHT     &kp GU(C)   &none &none &none     &kp RSHFT    &kp RGUI    &kp RCTRL    &kp RALT
-                &dn          &kp LC(LEFT) &kp LC(UP)  &kp LC(RIGHT) &kp GU(S)   &none &none &none     &kp M        &kp COMMA   &kp DOT      &none
+                &kp ESC      &none        &kp UP      &none         &none       &none &none &none     &none        &none       &none        &bspc_del
+                &mup         &kp LEFT     &kp DOWN    &kp RIGHT     &kp GA(C)   &none &none &none     &kp RSHFT    &kp RGUI    &kp RCTRL    &kp RALT
+                &mdn         &kp LC(LEFT) &kp LC(UP)  &kp LC(RIGHT) &kp GA(S)   &none &none &none     &kp M        &kp COMMA   &kp DOT      &none
                 &none        &none        &none       &none         &none       &none &none &none     &none        &trans      &none        &none
             >;
         };
