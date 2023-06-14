@@ -50,7 +50,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MEDIA_UP";
             #binding-cells = <0>;
-            bindings = <&kp C_VOL_UP>, <&kp F14>;
+            bindings = <&kp C_VOL_UP>, <&kp C_BRI_UP>;
             mods = <(MOD_RSFT)>;
         };
 
@@ -58,7 +58,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MEDIA_DN";
             #binding-cells = <0>;
-            bindings = <&kp C_VOL_DN>, <&kp F15>;
+            bindings = <&kp C_VOL_DN>, <&kp C_BRI_DN>;
             mods = <(MOD_RSFT)>;
         };
 
@@ -118,7 +118,7 @@
 
         SA { bindings = <
                 &kp GRAVE    &none        &kp MINUS   &kp EQUAL     &none       &none &none &none     &kp LBKT     &kp RBKT    &kp SQT      &bspc_del
-                &pm LALT N1  &hm LCTRL N2 &hm LGUI N3 &hm LSHFT N4  &kp N5      &none &none &kp N6    &hm RSHFT N7 &hm RGUI N8 &hm RCTRL N9 &pm RALT N0
+                &pm LALT N1  &hm LCTRL N2 &hm LGUI N3 &hm LSHFT N4  &kp N5      &none &none &kp N6    &hm RSHFT S7 &hm RGUI S8 &hm RCTRL S9 &pm RALT S0
                 &none        &none        &none       &none         &none       &none &none &none     &kp LT       &kp GT      &kp BSLH     &kp FSLH
                 &none        &none        &none       &trans        &none       &none &none &none     &kp SPACE    &kp RET     &none        &none
             >;
