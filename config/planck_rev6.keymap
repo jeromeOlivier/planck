@@ -80,7 +80,7 @@
 
         S9: special_9 {
             compatible = "zmk,behavior-mod-morph";
-            label = "SPECIAL_8";
+            label = "SPECIAL_9";
             #binding-cells = <0>;
             bindings = <&kp N9>, <&kp AMPS>;
             mods = <(MOD_LSFT)>;
