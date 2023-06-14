@@ -44,7 +44,6 @@
             #binding-cells = <0>;
             bindings = <&kp BACKSPACE>, <&kp DELETE>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_RSFT)>;
         };
 
         up: media_up {
@@ -94,7 +93,7 @@
         };
 
         NB { bindings = <
-                &kp EXCL     &kp AT       &kp HASH    &kp DOLLAR    &kp PERCENT &none &none &kp CARET &kp AMPS     &kp STAR    &none        &bspc_del
+                &kp EXCL     &kp AT       &kp HASH    &kp DOLLAR    &kp PERCENT &none &none &kp CARET &kp AMPS     &kp STAR    &kp DQT      &bspc_del
                 &pm LALT N1  &hm LCTRL N2 &hm LGUI N3 &hm LSHFT N4  &kp N5      &none &none &kp N6    &hm RSHFT N7 &hm RGUI N8 &hm RCTRL N9 &pm RALT N0
                 &none        &none        &none       &none         &none       &none &none &none     &none        &none       &none        &none
                 &none        &none        &none       &none         &none       &none &none &none     &trans       &none       &none        &none
