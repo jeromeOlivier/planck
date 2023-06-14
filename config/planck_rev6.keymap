@@ -9,8 +9,8 @@
 
 #define AL 0
 #define FN 1
-#define SY 2
-#define NB 3
+#define SA 2
+#define SB 3
 #define NV 4
 
 #define HYPR RS(RC(RA(RGUI)))
@@ -104,7 +104,7 @@
                 &kp Q        &kp W        &kp E       &kp R         &kp T       &none &none &kp Y    &kp U         &kp I       &kp O        &kp P
                 &pm LALT A   &hm LCTRL S  &hm LGUI D  &hm LSHFT F   &kp G       &none &none &kp H    &hm RSHFT J   &hm RGUI K  &hm RCTRL L  &pm RALT SEMI
                 &kp Z        &kp X        &kp C       &kp V         &kp B       &none &none &kp N    &kp M         &kp COMMA   &kp DOT      &kp FSLH
-                &none        &none        &mo FN      &lt S1 TAB    &kp CAPS    &none &none &kp HYPR &lt S2 SPACE  &mo NV      &none        &none
+                &none        &none        &mo FN      &lt SA TAB    &kp CAPS    &none &none &kp HYPR &lt SB SPACE  &mo NV      &none        &none
             >;
         };
 
@@ -116,7 +116,7 @@
             >;
         };
 
-        S1 { bindings = <
+        SA { bindings = <
                 &kp GRAVE    &none        &kp MINUS   &kp EQUAL     &none       &none &none &none     &kp LBKT     &kp RBKT    &kp SQT      &bspc_del
                 &pm LALT N1  &hm LCTRL N2 &hm LGUI N3 &hm LSHFT N4  &kp N5      &none &none &kp N6    &hm RSHFT S7 &hm RGUI S8 &hm RCTRL S9 &pm RALT S0
                 &none        &none        &none       &none         &none       &none &none &none     &kp LT       &kp GT      &kp BSLH     &kp FSLH
@@ -124,7 +124,7 @@
             >;
         };
 
-        S2 { bindings = <
+        SB { bindings = <
                 &kp GRAVE    &none        &kp MINUS   &kp EQUAL     &none       &none &none &none     &kp LBKT     &kp RBKT    &kp SQT      &bspc_del
                 &pm LALT N1  &hm LCTRL N2 &hm LGUI N3 &hm LSHFT N4  &kp N5      &none &none &kp N6    &hm RSHFT S7 &hm RGUI S8 &hm RCTRL S9 &pm RALT S0
                 &none        &none        &none       &none         &none       &none &none &none     &kp LT       &kp GT      &kp BSLH     &kp FSLH
