@@ -70,14 +70,14 @@
             mods = <(MOD_LSFT)>;
         };
 
-        atS7: at_special_7 {
+        hm7: homerow_7 {
             compatible = "zmk,behavior-hold-tap";
-            label = "AT_SPECIAL_7";
+            label = "HOMEROW_7";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
             flavor = "tap-preferred";
-            bindings = <&S7>, <&kp RSHFT>;
+            bindings = <&kp>, <&S7>;
         };
 
         S8: special_8 {
@@ -130,7 +130,7 @@
 
         SA { bindings = <
                 &kp GRAVE    &none        &kp MINUS   &kp EQUAL     &none       &none &none &none     &kp LBKT     &kp RBKT    &kp SQT      &bspc_del
-                &pm LALT N1  &hm LCTRL N2 &hm LGUI N3 &hm LSHFT N4  &kp N5      &none &none &kp N6    &atS7        &hm RGUI N8 &hm RCTRL N9 &pm RALT N0
+                &pm LALT N1  &hm LCTRL N2 &hm LGUI N3 &hm LSHFT N4  &kp N5      &none &none &kp N6    &hm7 LSHFT 0 &hm RGUI N8 &hm RCTRL N9 &pm RALT N0
                 &none        &none        &none       &none         &none       &none &none &none     &kp LT       &kp GT      &kp BSLH     &kp FSLH
                 &none        &none        &none       &trans        &none       &none &none &none     &kp SPACE    &kp RET     &none        &none
             >;
