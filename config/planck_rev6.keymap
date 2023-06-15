@@ -50,7 +50,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MEDIA_UP";
             #binding-cells = <0>;
-            bindings = <&kp C_VOL_UP>, <&kp F14>;
+            bindings = <&kp C_VOL_UP>, <&kp F15>;
             mods = <(MOD_RSFT)>;
         };
 
@@ -58,7 +58,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MEDIA_DN";
             #binding-cells = <0>;
-            bindings = <&kp C_VOL_DN>, <&kp F15>;
+            bindings = <&kp C_VOL_DN>, <&kp F14>;
             mods = <(MOD_RSFT)>;
         };
 
