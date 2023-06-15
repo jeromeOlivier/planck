@@ -106,7 +106,7 @@
             mods = <(MOD_LSFT)>;
         };
 
-        hm8: homerow_9 {
+        hm9: homerow_9 {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_9";
             #binding-cells = <2>;
