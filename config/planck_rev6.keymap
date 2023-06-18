@@ -30,7 +30,7 @@
       gt_ar: greater_arrow {
         compatible = "zmk,behavior-mod-morph";
         label = "GREATER_ARROW";
-        #binding-cells = <&kp GT>, &arrow;
+        #binding-cells = <&kp GT>, <&arrow>;
         mods = <(MOD_LSFT)>;
       };
 
