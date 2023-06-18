@@ -17,122 +17,141 @@
 #define GA(key) RG(RA(key))
 
 / {
+  macros {
+    ZMK_MACRO(
+      arrow,
+      wait-ms = <30>;
+      tap-ms = <40>;
+      bindings = <&kp EQUAL &kp GT>;)
+  }
+
     behaviors {
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick-tap-ms = <125>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp >;
-        };
+//    SHIFTED KEYS
+      gt_ar: greater_arrow {
+        compatible = "zmk,behavior-mod-morph";
+        label = "GREATER_ARROW";
+        #binding-cells = <&kp GT>, &arrow;
+        mods = <(MOD_LSFT)>;
+      };
 
-        pm: pinky_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "PINKY_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp >;
-        };
+      bspc_del: backspace_delete {
+        compatible = "zmk,behavior-mod-morph";
+        label = "BACKSPACE_DELETE";
+        #binding-cells = <0>;
+        bindings = <&kp BACKSPACE>, <&kp DELETE>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+      };
 
-        bspc_del: backspace_delete {
-            compatible = "zmk,behavior-mod-morph";
-            label = "BACKSPACE_DELETE";
-            #binding-cells = <0>;
-            bindings = <&kp BACKSPACE>, <&kp DELETE>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
+      mup: media_up {
+        compatible = "zmk,behavior-mod-morph";
+        label = "MEDIA_UP";
+        #binding-cells = <0>;
+        bindings = <&kp C_VOL_UP>, <&kp F15>;
+        mods = <(MOD_RSFT)>;
+      };
 
-        mup: media_up {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MEDIA_UP";
-            #binding-cells = <0>;
-            bindings = <&kp C_VOL_UP>, <&kp F15>;
-            mods = <(MOD_RSFT)>;
-        };
+      mdn: media_dn {
+        compatible = "zmk,behavior-mod-morph";
+        label = "MEDIA_DN";
+        #binding-cells = <0>;
+        bindings = <&kp C_VOL_DN>, <&kp F14>;
+        mods = <(MOD_RSFT)>;
+      };
 
-        mdn: media_dn {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MEDIA_DN";
-            #binding-cells = <0>;
-            bindings = <&kp C_VOL_DN>, <&kp F14>;
-            mods = <(MOD_RSFT)>;
-        };
+      S7: special_7 {
+        compatible = "zmk,behavior-mod-morph";
+        label = "SPECIAL_7";
+        #binding-cells = <0>;
+        bindings = <&kp N7>, <&kp LPAR>;
+        mods = <(MOD_LSFT)>;
+      };
 
-        S7: special_7 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SPECIAL_7";
-            #binding-cells = <0>;
-            bindings = <&kp N7>, <&kp LPAR>;
-            mods = <(MOD_LSFT)>;
-        };
+      S8: special_8 {
+        compatible = "zmk,behavior-mod-morph";
+        label = "SPECIAL_8";
+        #binding-cells = <0>;
+        bindings = <&kp N8>, <&kp RPAR>;
+        mods = <(MOD_LSFT)>;
+      };
 
-        hm7: homerow_7 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_7";
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick-tap-ms = <125>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&S7>;
-        };
+      S9: special_9 {
+        compatible = "zmk,behavior-mod-morph";
+        label = "SPECIAL_9";
+        #binding-cells = <0>;
+        bindings = <&kp N9>, <&kp AMPS>;
+        mods = <(MOD_LSFT)>;
+      };
 
-        S8: special_8 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SPECIAL_8";
-            #binding-cells = <0>;
-            bindings = <&kp N8>, <&kp RPAR>;
-            mods = <(MOD_LSFT)>;
-        };
+      S0: special_0 {
+        compatible = "zmk,behavior-mod-morph";
+        label = "SPECIAL_0";
+        #binding-cells = <0>;
+        bindings = <&kp N0>, <&kp STAR>;
+        mods = <(MOD_LSFT)>;
+      };
 
-        hm8: homerow_8 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_8";
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick-tap-ms = <125>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&S8>;
-        };
+//    HOME ROWS
+      hm: homerow_mods {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HOMEROW_MODS";
+        #binding-cells = <2>;
+        tapping-term-ms = <150>;
+        quick-tap-ms = <125>;
+        flavor = "tap-preferred";
+        bindings = <&kp>, <&kp >;
+      };
 
-        S9: special_9 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SPECIAL_9";
-            #binding-cells = <0>;
-            bindings = <&kp N9>, <&kp AMPS>;
-            mods = <(MOD_LSFT)>;
-        };
+      pm: pinky_mods {
+        compatible = "zmk,behavior-hold-tap";
+        label = "PINKY_MODS";
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        quick-tap-ms = <150>;
+        flavor = "tap-preferred";
+        bindings = <&kp>, <&kp >;
+      };
 
-        hm9: homerow_9 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_9";
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick-tap-ms = <125>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&S9>;
-        };
+      hm7: homerow_7 {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HOMEROW_7";
+        #binding-cells = <2>;
+        tapping-term-ms = <150>;
+        quick-tap-ms = <125>;
+        flavor = "tap-preferred";
+        bindings = <&kp>, <&S7>;
+      };
 
-        S0: special_0 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SPECIAL_0";
-            #binding-cells = <0>;
-            bindings = <&kp N0>, <&kp STAR>;
-            mods = <(MOD_LSFT)>;
-        };
+      hm8: homerow_8 {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HOMEROW_8";
+        #binding-cells = <2>;
+        tapping-term-ms = <150>;
+        quick-tap-ms = <125>;
+        flavor = "tap-preferred";
+        bindings = <&kp>, <&S8>;
+      };
 
-        hm0: homerow_0 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_0";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&S0>;
-        };
+      hm9: homerow_9 {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HOMEROW_9";
+        #binding-cells = <2>;
+        tapping-term-ms = <150>;
+        quick-tap-ms = <125>;
+        flavor = "tap-preferred";
+        bindings = <&kp>, <&S9>;
+      };
+
+      hm0: homerow_0 {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HOMEROW_0";
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        quick-tap-ms = <150>;
+        flavor = "tap-preferred";
+        bindings = <&kp>, <&S0>;
+      };
+
+
 
     };
 
@@ -153,22 +172,22 @@
                 &kp ESC      &none        &none       &none         &none     &none &none &none     &kp F1       &kp F2      &kp F3      &kp F4
                 &kp LCTRL    &kp LALT     &kp LGUI    &kp LSHFT     &none     &none &none &none     &kp F5       &kp F6      &kp F7      &kp F8
                 &none        &none        &none       &none         &none     &none &none &none     &kp F9       &kp F10     &kp F11     &kp F12
-                &none        &none        &trans      &none         &none     &none &none &none     &none        &none       &none       &none
+                &none        &none        &trans      &none         &none     &none &none &none     &kp SPACE    &none       &none       &none
             >;
         };
 
         SA { bindings = <
-                &kp GRAVE    &kp DQT      &kp MINUS   &kp EQUAL     &kp CARET &none &none &kp STAR  &kp LBKT     &kp RBKT    &kp SQT     &bspc_del
+                &kp GRAVE    &none        &kp MINUS   &kp EQUAL     &none     &none &none &none     &kp LBKT     &kp RBKT    &kp SQT     &bspc_del
                 &pm LCTRL N1 &hm LALT N2  &hm LGUI N3 &hm LSHFT N4  &kp N5    &none &none &kp N6    &hm7 LSHFT 0 &hm8 RGUI 0 &hm9 RALT 0 &hm0 RCTRL 0
-                &kp EXCL     &kp AT       &kp HASH    &kp DLLR      &kp PRCNT &none &none &kp AMPS  &kp LT       &kp GT      &kp BSLH    &kp FSLH
-                &none        &none        &none       &trans        &none     &none &none &none     &kp SPACE    &kp RET     &none       &none
+                &none        &none        &none       &none         &none     &none &none &none     &kp LT       &gt_ar      &kp BSLH    &kp FSLH
+                &none        &none        &none       &trans        &none     &none &none &none     &none        &kp RET     &none       &none
             >;
         };
 
         SB { bindings = <
-                &kp GRAVE    &kp DQT      &kp MINUS   &kp EQUAL     &kp CARET &none &none &kp STAR  &kp LBKT     &kp RBKT    &kp SQT     &bspc_del
+                &kp GRAVE    &none        &kp MINUS   &kp EQUAL     &none     &none &none &none     &kp LBKT     &kp RBKT    &kp SQT     &bspc_del
                 &pm LCTRL N1 &hm LALT N2  &hm LGUI N3 &hm LSHFT N4  &kp N5    &none &none &kp N6    &hm7 LSHFT 0 &hm8 RGUI 0 &hm9 RALT 0 &hm0 RCTRL 0
-                &kp EXCL     &kp AT       &kp HASH    &kp DLLR      &kp PRCNT &none &none &kp AMPS  &kp LT       &kp GT      &kp BSLH    &kp FSLH
+                &none        &none        &none       &none         &none     &none &none &none     &kp LT       &gt_ar      &kp BSLH    &kp FSLH
                 &none        &none        &none       &none         &none     &none &none &none     &trans       &none       &none       &none
             >;
         };
