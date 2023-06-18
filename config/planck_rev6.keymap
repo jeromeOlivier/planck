@@ -23,7 +23,7 @@
       wait-ms = <30>;
       tap-ms = <40>;
       bindings = <&kp EQUAL &kp GT>;)
-  }
+  };
 
     behaviors {
 //    SHIFTED KEYS
@@ -150,9 +150,6 @@
         flavor = "tap-preferred";
         bindings = <&kp>, <&S0>;
       };
-
-
-
     };
 
     chosen { zmk,matrix_transform = &layout_grid_transform; };
