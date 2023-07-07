@@ -12,9 +12,6 @@
 #define SY 2
 #define NV 3
 
-#define HYPR RS(RC(RA(RGUI)))
-#define GA(key) RG(RA(key))
-
 / {
     behaviors {
 //    SHIFTED KEYS
