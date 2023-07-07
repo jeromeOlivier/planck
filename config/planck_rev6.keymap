@@ -9,9 +9,8 @@
 
 #define AL 0
 #define FN 1
-#define SA 2
-#define SB 3
-#define NV 4
+#define SY 2
+#define NV 3
 
 #define HYPR RS(RC(RA(RGUI)))
 #define GA(key) RG(RA(key))
@@ -143,34 +142,26 @@
         compatible = "zmk,keymap";
 
         AL { bindings = <
-                &kp Q        &kp W        &kp E       &kp R         &kp T     &none &none &kp Y    &kp U         &kp I       &kp O       &kp P
-                &pm LCTRL A  &hm LALT S   &hm LGUI D  &hm LSHFT F   &kp G     &none &none &kp H    &hm RSHFT J   &hm RGUI K  &hm RALT L  &pm RCTRL SEMI
-                &kp Z        &kp X        &kp C       &kp V         &kp B     &none &none &kp N    &kp M         &kp COMMA   &kp DOT     &kp FSLH
-                &none        &none        &mo FN      &lt SA TAB    &kp CAPS  &none &none &mo NV   &lt SB SPACE  &kp SPACE   &none       &none
+                &kp Q        &kp W        &kp E       &kp R         &kp T     &none &none &kp Y     &kp U         &kp I        &kp O       &kp P
+                &pm LCTRL A  &hm LALT S   &hm LGUI D  &hm LSHFT F   &kp G     &none &none &kp H     &hm RSHFT J   &hm RGUI K   &hm RALT L  &pm RCTRL SEMI
+                &kp Z        &kp X        &kp C       &lt FN V      &kp B     &none &none &kp N     &kp M         &kp COMMA    &kp DOT     &kp FSLH
+                &none        &none        &lt SY TAB  &lt SY TAB    &kp CAPS  &none &none &kp SPACE &lt NV SPACE  &lt NV SPACE &none       &none
             >;
         };
 
         FN { bindings = <
-                &kp ESC      &none        &none       &none         &none     &none &none &none     &kp F1       &kp F2      &kp F3      &kp F4
-                &kp LCTRL    &kp LALT     &kp LGUI    &kp LSHFT     &none     &none &none &none     &kp F5       &kp F6      &kp F7      &kp F8
-                &none        &none        &none       &none         &none     &none &none &none     &kp F9       &kp F10     &kp F11     &kp F12
-                &none        &none        &trans      &none         &none     &none &none &none     &kp SPACE    &none       &none       &none
+                &none        &none        &none       &none         &none     &none &none &none     &kp F1       &kp F2       &kp F3      &kp F4
+                &kp LCTRL    &kp LALT     &kp LGUI    &kp LSHFT     &none     &none &none &none     &kp F5       &kp F6       &kp F7      &kp F8
+                &none        &none        &none       &trans        &none     &none &none &none     &kp F9       &kp F10      &kp F11     &kp F12
+                &none        &none        &none       &none         &none     &none &none &kp SPACE &kp SPACE    &kp SPACE    &none       &none
             >;
         };
 
-        SA { bindings = <
-                &kp GRAVE    &none        &kp MINUS   &kp EQUAL     &none     &none &none &none     &kp LBKT     &kp RBKT    &kp SQT     &bspc_del
-                &pm LCTRL N1 &hm LALT N2  &hm LGUI N3 &hm LSHFT N4  &kp N5    &none &none &kp N6    &hm7 LSHFT 0 &hm8 RGUI 0 &hm9 RALT 0 &hm0 RCTRL 0
-                &none        &none        &none       &none         &none     &none &none &none     &kp LT       &kp GT      &kp BSLH    &kp FSLH
-                &none        &none        &none       &trans        &none     &none &none &none     &none        &kp RET     &none       &none
-            >;
-        };
-
-        SB { bindings = <
-                &kp GRAVE    &none        &kp MINUS   &kp EQUAL     &none     &none &none &none     &kp LBKT     &kp RBKT    &kp SQT     &bspc_del
-                &pm LCTRL N1 &hm LALT N2  &hm LGUI N3 &hm LSHFT N4  &kp N5    &none &none &kp N6    &hm7 LSHFT 0 &hm8 RGUI 0 &hm9 RALT 0 &hm0 RCTRL 0
-                &none        &none        &none       &none         &none     &none &none &none     &kp LT       &kp GT      &kp BSLH    &kp FSLH
-                &none        &none        &none       &none         &none     &none &none &none     &trans       &none       &none       &none
+        SY { bindings = <
+                &kp GRAVE    &none        &kp MINUS   &kp EQUAL     &none     &none &none &none     &kp LBKT     &kp RBKT     &kp SQT     &bspc_del
+                &pm LCTRL N1 &hm LALT N2  &hm LGUI N3 &hm LSHFT N4  &kp N5    &none &none &kp N6    &hm7 LSHFT 0 &hm8 RGUI 0  &hm9 RALT 0 &hm0 RCTRL 0
+                &none        &none        &none       &none         &none     &none &none &none     &kp LT       &kp GT       &kp BSLH    &kp FSLH
+                &none        &none        &trans      &trans        &none     &none &none &kp SPACE &kp RET      &kp RET      &none       &none
             >;
         };
 
@@ -178,7 +169,7 @@
                 &kp ESC      &none        &kp UP      &none         &none     &none &none &none     &none        &none        &none      &bspc_del
                 &mup         &kp LEFT     &kp DOWN    &kp RIGHT     &none     &none &none &none     &kp RSHFT    &kp RGUI     &kp RALT   &kp RCTRL
                 &mdn         &kp LC(LEFT) &kp LC(UP)  &kp LC(RIGHT) &none     &none &none &none     &none        &none        &none      &none
-                &none        &none        &none       &none         &none     &none &none &none     &none        &trans       &none      &none
+                &none        &none        &none       &none         &none     &none &none &none     &trans       &trans       &none      &none
             >;
         };
     };
