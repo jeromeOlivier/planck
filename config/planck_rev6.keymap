@@ -13,6 +13,7 @@
 #define SY2 3
 #define NV 4
 #define SP SPACE
+#define HYPR(key) RS(RC(RA(RG(key))))
 
 / {
     behaviors {
@@ -159,7 +160,7 @@
         SY1 { bindings = <
                 &kp GRAVE    &none        &kp MINUS   &kp EQUAL     &none     &none &none &none     &kp LBKT     &kp RBKT     &kp SQT     &bspc_del
                 &pm LCTRL N1 &hm LALT N2  &hm LGUI N3 &hm LSHFT N4  &kp N5    &none &none &kp N6    &hm7 LSHFT 0 &hm8 RGUI 0  &hm9 RALT 0 &hm0 RCTRL 0
-                &none        &none        &none       &none         &none     &none &none &none     &kp LT       &kp GT       &kp BSLH    &kp FSLH
+                &none        &kp HYPR(I)  &kp HYPR(O) &kp HYPR(U)   &none     &none &none &none     &kp LT       &kp GT       &kp BSLH    &kp FSLH
                 &none        &none        &none       &trans        &none     &none &none &none     &kp RET      &none        &none       &none
             >;
         };
