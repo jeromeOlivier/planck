@@ -42,19 +42,11 @@
         mods = <(MOD_RSFT)>;
       };
 
-      S7: special_7 {
-        compatible = "zmk,behavior-mod-morph";
-        label = "SPECIAL_7";
-        #binding-cells = <0>;
-        bindings = <&kp N7>, <&kp LPAR>;
-        mods = <(MOD_LSFT)>;
-      };
-
       S8: special_8 {
         compatible = "zmk,behavior-mod-morph";
         label = "SPECIAL_8";
         #binding-cells = <0>;
-        bindings = <&kp N8>, <&kp RPAR>;
+        bindings = <&kp N8>, <&kp LPAR>;
         mods = <(MOD_LSFT)>;
       };
 
@@ -62,7 +54,7 @@
         compatible = "zmk,behavior-mod-morph";
         label = "SPECIAL_9";
         #binding-cells = <0>;
-        bindings = <&kp N9>, <&kp AMPS>;
+        bindings = <&kp N9>, <&kp RPAR>;
         mods = <(MOD_LSFT)>;
       };
 
@@ -93,16 +85,6 @@
         quick-tap-ms = <150>;
         flavor = "tap-preferred";
         bindings = <&kp>, <&kp >;
-      };
-
-      hm7: homerow_7 {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HOMEROW_7";
-        #binding-cells = <2>;
-        tapping-term-ms = <150>;
-        quick-tap-ms = <125>;
-        flavor = "tap-preferred";
-        bindings = <&kp>, <&S7>;
       };
 
       hm8: homerow_8 {
@@ -158,17 +140,17 @@
         };
 
         SY1 { bindings = <
-                &kp GRAVE    &none        &kp MINUS   &kp EQUAL     &none     &none &none &none     &kp LBKT     &kp RBKT     &kp SQT     &bspc_del
-                &pm LCTRL N1 &hm LALT N2  &hm LGUI N3 &hm LSHFT N4  &kp N5    &none &none &kp N6    &hm7 LSHFT 0 &hm8 RGUI 0  &hm9 RALT 0 &hm0 RCTRL 0
-                &none        &none        &none       &none         &none     &none &none &none     &kp LT       &kp GT       &kp BSLH    &kp FSLH
+                &kp GRAVE    &none        &kp MINUS   &kp EQUAL     &none     &none &none &none     &kp SQT      &kp LBKT     &kp RBKT    &bspc_del
+                &pm LCTRL N1 &hm LALT N2  &hm LGUI N3 &hm LSHFT N4  &kp N5    &none &none &kp N6    &hm RSHFT N7 &hm8 RGUI 0  &hm9 RALT 0 &hm0 RCTRL 0
+                &none        &none        &none       &none         &none     &none &none &none     &none        &kp LT       &kp GT      &kp BSLH
                 &none        &none        &none       &trans        &none     &none &none &none     &kp RET      &none        &none       &none
             >;
         };
 
         SY2 { bindings = <
-                &kp GRAVE    &none        &kp MINUS   &kp EQUAL     &none     &none &none &none     &kp LBKT     &kp RBKT     &kp SQT     &bspc_del
-                &pm LCTRL N1 &hm LALT N2  &hm LGUI N3 &hm LSHFT N4  &kp N5    &none &none &kp N6    &hm7 LSHFT 0 &hm8 RGUI 0  &hm9 RALT 0 &hm0 RCTRL 0
-                &none        &kp HYPR(I)  &kp HYPR(O) &kp HYPR(U)   &none     &none &none &none     &kp LT       &kp GT       &kp BSLH    &kp FSLH
+                &kp GRAVE    &none        &kp MINUS   &kp EQUAL     &none     &none &none &none     &kp SQT      &kp LBKT     &kp RBKT    &bspc_del
+                &pm LCTRL N1 &hm LALT N2  &hm LGUI N3 &hm LSHFT N4  &kp N5    &none &none &kp N6    &hm RSHFT N7 &hm8 RGUI 0  &hm9 RALT 0 &hm0 RCTRL 0
+                &none        &kp HYPR(I)  &kp HYPR(O) &kp HYPR(U)   &none     &none &none &none     &none        &kp LT       &kp GT      &kp BSLH
                 &none        &none        &kp CAPS    &kp TAB       &none     &none &none &none     &trans       &none        &none       &none
             >;
         };
