@@ -150,7 +150,7 @@
         SY2 { bindings = <
                 &kp ESC      &none        &kp MINUS   &kp EQUAL     &none     &none &none &kp EQUAL &kp GRAVE    &kp LBKT     &kp RBKT    &bspc_del
                 &pm LCTRL N1 &hm LALT N2  &hm LGUI N3 &hm LSHFT N4  &kp N5    &none &none &kp N6    &hm RSHFT N7 &hm8 RGUI 0  &hm9 RALT 0 &hm0 RCTRL 0
-                &none        &kp HYPR(I)  &kp HYPR(O) &kp HYPR(U)   &none     &none &none &kp MINUS &kp SQT      &kp COMMA    &kp DOT     &kp BSLH
+                &tog SY1     &none        &none       &none         &none     &none &none &kp MINUS &kp SQT      &kp COMMA    &kp DOT     &kp BSLH
                 &none        &none        &kp CAPS    &kp TAB       &none     &none &none &none     &trans       &none        &none       &none
             >;
         };
