@@ -151,7 +151,7 @@
         SY1 { bindings = <
                 &kp ESC      &kp GRAVE    &kp MINUS   &kp EQUAL     &none     &none &none &none     &kp SQT      &kp DQT      &kp BSLH    &bspc_del
                 &pm LCTRL N1 &hm LALT N2  &hm LGUI N3 &hm LSHFT N4  &kp N5    &none &none &kp N6    &hm RSHFT N7 &hm RGUI N8  &hm RALT N9 &hm RCTRL N0
-                &kp LT       &kp LBRC     &kp LBKT    &kp LPAR      &none     &none &none &none     &kp RPAR     &kp RBKT     &kp RBRC    &kp GT
+                &kp LT       &kp LBKT     &kp LBRC    &kp LPAR      &none     &none &none &none     &kp RPAR     &kp RBRC     &kp RBKT    &kp GT
                 &none        &none        &none       &trans        &none     &none &none &none     &kp RET      &none        &none       &none
             >;
         };
@@ -159,7 +159,7 @@
         SY2 { bindings = <
                 &kp ESC      &kp GRAVE    &kp MINUS   &kp EQUAL     &none     &none &none &none     &kp SQT      &kp DQT      &kp BSLH    &bspc_del
                 &pm LCTRL N1 &hm LALT N2  &hm LGUI N3 &hm LSHFT N4  &kp N5    &none &none &kp N6    &hm RSHFT N7 &hm RGUI N8  &hm RALT N9 &hm RCTRL N0
-                &kp LT       &kp LBRC     &kp LBKT    &kp LPAR      &none     &none &none &none     &kp RPAR     &kp RBKT     &kp RBRC    &kp GT
+                &kp LT       &kp LBKT     &kp LBRC    &kp LPAR      &none     &none &none &none     &kp RPAR     &kp RBRC     &kp RBKT    &kp GT
                 &none        &none        &kp CAPS    &kp TAB       &none     &none &none &none     &trans       &none        &none       &none
             >;
         };
