@@ -71,13 +71,6 @@
             layers = <AL>;
             bindings = <&kp EQUAL>;
         };
-        // backspace
-        combo_bspc {
-            timeout-ms = <50>;
-            key-positions = <10 11>;
-            layers = <AL>;
-            bindings = <&kp BACKSPACE>;
-        };
     };
     behaviors {
 //    SHIFTED KEYS
