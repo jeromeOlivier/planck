@@ -35,26 +35,26 @@
         combo_lbkt {
             timeout-ms = <50>;
             key-positions = <14 15>;
-            layers = <SY1>;
+            layers = <AL>;
             bindings = <&kp LBKT>;
         };
         combo_rbkt {
             timeout-ms = <50>;
             key-positions = <20 21>;
-            layers = <SY1>;
+            layers = <AL>;
             bindings = <&kp RBKT>;
         };
         // parens
         combo_lpar {
             timeout-ms = <50>;
             key-positions = <14 25>;
-            layers = <SY1>;
+            layers = <AL>;
             bindings = <&kp LPAR>;
         };
         combo_rpar {
             timeout-ms = <50>;
             key-positions = <19 28>;
-            layers = <SY1>;
+            layers = <AL>;
             bindings = <&kp RPAR>;
         };
     };
