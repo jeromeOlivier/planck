@@ -20,15 +20,17 @@
         compatible = "zmk,combos";
         combo_lbrc {
             timeout-ms = <50>;
-            key-position = <2, 15>;
+            key-position = <2 15>;
+            layers = <AL>;
             bindings = <&kp LBRC>;
         };
         combo_rbrc {
             timeout-ms = <50>;
-            key-position = <9, 20>;
+            key-position = <9 20>;
+            layers = <AL>;
             bindings = <&kp RBRC>;
         };
-    }
+    };
     behaviors {
 //    SHIFTED KEYS
       bspc_del: backspace_delete {
