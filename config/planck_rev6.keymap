@@ -18,71 +18,65 @@
 / {
     combos {
         compatible = "zmk,combos";
-        // braces
-        combo_lbrc {
-            timeout-ms = <50>;
-            key-positions = <2 15>;
-            layers = <AL>;
-            bindings = <&kp LBRC>;
-        };
-        combo_rbrc {
-            timeout-ms = <50>;
-            key-positions = <9 20>;
-            layers = <AL>;
-            bindings = <&kp RBRC>;
-        };
-        // brackets
+        // brackets & braces
         combo_lbkt {
             timeout-ms = <50>;
-            key-positions = <14 15>;
+            key-positions = <2 15>;
             layers = <AL>;
             bindings = <&kp LBKT>;
         };
         combo_rbkt {
             timeout-ms = <50>;
-            key-positions = <20 21>;
+            key-positions = <9 20>;
             layers = <AL>;
             bindings = <&kp RBKT>;
         };
-        // parens
+        // parentheses
         combo_lpar {
             timeout-ms = <50>;
-            key-positions = <14 27>;
+            key-positions = <14 15>;
             layers = <AL>;
             bindings = <&kp LPAR>;
         };
         combo_rpar {
             timeout-ms = <50>;
-            key-positions = <21 32>;
+            key-positions = <20 21>;
             layers = <AL>;
             bindings = <&kp RPAR>;
         };
         // chevrons
         combo_lt {
             timeout-ms = <50>;
-            key-positions = <26 27>;
+            key-positions = <14 27>;
             layers = <AL>;
             bindings = <&kp LT>;
         };
         combo_gt {
             timeout-ms = <50>;
-            key-positions = <32 33>;
+            key-positions = <21 32>;
             layers = <AL>;
             bindings = <&kp GT>;
         };
-        // single quotes
+        // single quote
         combo_sqt {
             timeout-ms = <50>;
             key-positions = <8 9>;
             layers = <AL>;
             bindings = <&kp SQT>;
         };
-        // fat arrow
+        // equal
         combo_arrow {
             timeout-ms = <50>;
             key-positions = <2 3>;
             layers = <AL>;
-            bindings = <&kp EQUAL &kp GT>;
+            bindings = <&kp EQUAL>;
+        };
+        // backspace
+        combo_bspc {
+            timeout-ms = <50>;
+            key-positions = <10 11>;
+            layers = <AL>;
+            bindings = <&kp BACKSPACE>;
         };
     };
     behaviors {
@@ -209,7 +203,7 @@
         };
 
         SY1 { bindings = <
-                &kp ESC      &kp GRAVE    &kp MINUS   &kp EQUAL     &none     &none &none &none     &kp SQT      &kp MINUS    &kp EQUAL   &bspc_del
+                &kp ESC      &kp GRAVE    &kp MINUS   &kp EQUAL     &none     &none &none &none     &none        &kp MINUS    &kp EQUAL   &bspc_del
                 &pm LCTRL N1 &hm LALT N2  &hm LGUI N3 &hm LSHFT N4  &kp N5    &none &none &kp N6    &hm RSHFT N7 &hm8 RGUI 0  &hm9 RALT 0 &hm0 RCTRL 0
                 &none        &none        &none       &none         &none     &none &none &none     &none        &none        &none       &kp BSLH
                 &none        &none        &none       &trans        &none     &none &none &none     &kp RET      &none        &none       &none
@@ -217,7 +211,7 @@
         };
 
         SY2 { bindings = <
-                &kp ESC      &kp GRAVE    &kp MINUS   &kp EQUAL     &kp LPAR  &none &none &kp RPAR  &kp SQT      &kp MINUS    &kp EQUAL   &bspc_del
+                &kp ESC      &kp GRAVE    &kp MINUS   &kp EQUAL     &kp LPAR  &none &none &kp RPAR  &none        &kp MINUS    &kp EQUAL   &bspc_del
                 &pm LCTRL N1 &hm LALT N2  &hm LGUI N3 &hm LSHFT N4  &kp N5    &none &none &kp N6    &hm RSHFT N7 &hm8 RGUI 0  &hm9 RALT 0 &hm0 RCTRL 0
                 &none        &none        &none       &kp LBKT      &kp LBRC  &none &none &kp RBRC  &kp RBKT     &kp LT       &kp GT      &kp BSLH
                 &none        &none        &kp CAPS    &kp TAB       &none     &none &none &none     &trans       &none        &none       &none
