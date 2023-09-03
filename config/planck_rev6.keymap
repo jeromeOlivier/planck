@@ -70,6 +70,20 @@
             layers = <AL>;
             bindings = <&kp GT>;
         };
+        // single quotes
+        combo_sqt {
+            timeout-ms = <50>;
+            key-positions = <8 9>;
+            layers = <AL>;
+            bindings = <&kp SQT>;
+        };
+        // fat arrow
+        combo_arrow {
+            timeout-ms = <50>;
+            key-positions = <2 3>;
+            layers = <AL>;
+            bindings = <&kp EQUAL &kp GT>;
+        };
     };
     behaviors {
 //    SHIFTED KEYS
@@ -195,9 +209,9 @@
         };
 
         SY1 { bindings = <
-                &kp ESC      &kp GRAVE    &kp MINUS   &kp EQUAL     &kp LPAR  &none &none &kp RPAR  &kp SQT      &kp MINUS    &kp EQUAL   &bspc_del
+                &kp ESC      &kp GRAVE    &kp MINUS   &kp EQUAL     &none     &none &none &none     &kp SQT      &kp MINUS    &kp EQUAL   &bspc_del
                 &pm LCTRL N1 &hm LALT N2  &hm LGUI N3 &hm LSHFT N4  &kp N5    &none &none &kp N6    &hm RSHFT N7 &hm8 RGUI 0  &hm9 RALT 0 &hm0 RCTRL 0
-                &none        &none        &none       &kp LBKT      &kp LBRC  &none &none &kp RBRC  &kp RBKT     &kp LT       &kp GT      &kp BSLH
+                &none        &none        &none       &none         &none     &none &none &none     &none        &none        &none       &kp BSLH
                 &none        &none        &none       &trans        &none     &none &none &none     &kp RET      &none        &none       &none
             >;
         };
