@@ -18,6 +18,7 @@
 / {
     combos {
         compatible = "zmk,combos";
+        // braces
         combo_lbrc {
             timeout-ms = <50>;
             key-positions = <2 15>;
@@ -29,6 +30,32 @@
             key-positions = <9 20>;
             layers = <AL>;
             bindings = <&kp RBRC>;
+        };
+        // brackets
+        combo_lbkt {
+            timeout-ms = <50>;
+            key-positions = <14 15>;
+            layers = <SY1>;
+            bindings = <&kp LBKT>;
+        };
+        combo_rbkt {
+            timeout-ms = <50>;
+            key-positions = <20 21>;
+            layers = <SY1>;
+            bindings = <&kp RBKT>;
+        };
+        // parens
+        combo_lpar {
+            timeout-ms = <50>;
+            key-positions = <14 25>;
+            layers = <SY1>;
+            bindings = <&kp LPAR>;
+        };
+        combo_rpar {
+            timeout-ms = <50>;
+            key-positions = <19 28>;
+            layers = <SY1>;
+            bindings = <&kp RPAR>;
         };
     };
     behaviors {
