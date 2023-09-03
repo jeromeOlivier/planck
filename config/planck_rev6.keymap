@@ -19,14 +19,14 @@
     combos {
         compatible = "zmk,combos";
         // grave
-        combo_minus {
+        combo_grave {
             timeout-ms = <50>;
             key-positions = <0 1>;
             layers = <AL>;
             bindings = <&kp GRAVE>;
         };
         // minus
-        combo_grave {
+        combo_minus {
             timeout-ms = <50>;
             key-positions = <1 2>;
             layers = <AL>;
