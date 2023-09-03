@@ -69,26 +69,26 @@
         // parentheses
         combo_lpar {
             timeout-ms = <50>;
-            key-positions = <14 15>;
+            key-positions = <14 27>;
             layers = <AL>;
             bindings = <&kp LPAR>;
         };
         combo_rpar {
             timeout-ms = <50>;
-            key-positions = <20 21>;
+            key-positions = <21 32>;
             layers = <AL>;
             bindings = <&kp RPAR>;
         };
         // chevrons
         combo_lt {
             timeout-ms = <50>;
-            key-positions = <14 27>;
+            key-positions = <26 27>;
             layers = <AL>;
             bindings = <&kp LT>;
         };
         combo_gt {
             timeout-ms = <50>;
-            key-positions = <21 32>;
+            key-positions = <32 33>;
             layers = <AL>;
             bindings = <&kp GT>;
         };
