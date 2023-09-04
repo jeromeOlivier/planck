@@ -13,79 +13,83 @@
 #define SY2 3
 #define NV 4
 #define SP SPACE
-#define HYPR(key) RS(RC(RA(RG(key))))
+#define ___ &none
 
 / {
     combos {
+        // hit two keys at once to get a third key
         compatible = "zmk,combos";
-        // grave
+        // q and w = grave ` key
         combo_grave {
             timeout-ms = <50>;
             key-positions = <0 1>;
             layers = <AL>;
             bindings = <&kp GRAVE>;
         };
-        // minus
+            // w and e = minus - key
         combo_minus {
             timeout-ms = <50>;
             key-positions = <1 2>;
             layers = <AL>;
             bindings = <&kp MINUS>;
         };
-        // equal
+            // e and r = equal = key
         combo_equal {
             timeout-ms = <50>;
             key-positions = <2 3>;
             layers = <AL>;
             bindings = <&kp EQUAL>;
         };
-        // single quote
+            // u and i = single quote ' key
         combo_sqt {
             timeout-ms = <50>;
             key-positions = <8 9>;
             layers = <AL>;
             bindings = <&kp SQT>;
         };
-        // backslash
+            // i and o = backslash \ key
         combo_bslh {
             timeout-ms = <50>;
             key-positions = <9 10>;
             layers = <AL>;
             bindings = <&kp BSLH>;
         };
-        // brackets & braces
+        // e and f = left bracket [ key
         combo_lbkt {
             timeout-ms = <50>;
             key-positions = <2 15>;
             layers = <AL>;
             bindings = <&kp LBKT>;
         };
+        // j and i = right bracket ] key
         combo_rbkt {
             timeout-ms = <50>;
             key-positions = <9 20>;
             layers = <AL>;
             bindings = <&kp RBKT>;
         };
-        // parentheses
+        // d and v = left parentheses ( key
         combo_lpar {
             timeout-ms = <50>;
             key-positions = <14 27>;
             layers = <AL>;
             bindings = <&kp LPAR>;
         };
+        // m and k = right parentheses ) key
         combo_rpar {
             timeout-ms = <50>;
             key-positions = <21 32>;
             layers = <AL>;
             bindings = <&kp RPAR>;
         };
-        // chevrons
+        // c and v = left chevron < key
         combo_lt {
             timeout-ms = <50>;
             key-positions = <26 27>;
             layers = <AL>;
             bindings = <&kp LT>;
         };
+        // m and , = right chevron > key
         combo_gt {
             timeout-ms = <50>;
             key-positions = <32 33>;
@@ -201,10 +205,10 @@
         compatible = "zmk,keymap";
 
         AL { bindings = <
-                &kp Q        &kp W        &kp E       &kp R         &kp T  &none &none &kp Y  &kp U         &kp I      &kp O      &pm SP P
-                &pm LCTRL A  &hm LALT S   &hm LGUI D  &hm LSHFT F   &kp G  &none &none &kp H  &hm RSHFT J   &hm RGUI K &hm RALT L &pm RCTRL SEMI
-                &kp Z        &kp X        &kp C       &lt FN V      &kp B  &none &none &kp N  &kp M         &kp COMMA  &kp DOT    &kp FSLH
-                &none        &none        &kp CAPS    &lt SY1 TAB   &none  &none &none &none  &lt SY2 SP    &mo NV     &none      &none
+                &kp Q        &kp W        &kp E       &kp R         &kp T  ___  ___  &kp Y  &kp U         &kp I      &kp O      &pm SP P
+                &pm LCTRL A  &hm LALT S   &hm LGUI D  &hm LSHFT F   &kp G  ___  ___  &kp H  &hm RSHFT J   &hm RGUI K &hm RALT L &pm RCTRL SEMI
+                &kp Z        &kp X        &kp C       &lt FN V      &kp B  ___  ___  &kp N  &kp M         &kp COMMA  &kp DOT    &kp FSLH
+                ___          ___          &kp CAPS    &lt SY1 TAB   ___    ___  ___  ___    &lt SY2 SP    &mo NV     ___        ___
             >;
         };
 
