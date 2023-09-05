@@ -81,16 +81,16 @@
             layers = <AL>;
             bindings = <&kp RPAR>;
         };
-        // [c] and [v] = left chevron < key
+        // [a] and [x] = left chevron < key
         combo_lt {
-            timeout-ms = <50>;
-            key-positions = <12 24>;
+            timeout-ms = <100>;
+            key-positions = <12 25>;
             layers = <AL>;
             bindings = <&kp LT>;
         };
         // [;] and [.] = right chevron > key
         combo_gt {
-            timeout-ms = <50>;
+            timeout-ms = <100>;
             key-positions = <23 34>;
             layers = <AL>;
             bindings = <&kp GT>;
