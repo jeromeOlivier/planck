@@ -17,84 +17,153 @@
 
 / {
     combos {
-        // hit two keys at once to get a third key
         compatible = "zmk,combos";
-        // q and w = grave ` key
+        // [q] and [w] = grave ` key
         combo_grave {
             timeout-ms = <50>;
             key-positions = <0 1>;
             layers = <AL>;
             bindings = <&kp GRAVE>;
         };
-            // w and e = minus - key
+        // [w] and [e] = minus - key
         combo_minus {
             timeout-ms = <50>;
             key-positions = <1 2>;
             layers = <AL>;
             bindings = <&kp MINUS>;
         };
-            // e and r = equal = key
+        // [e] and [r] = equal = key
         combo_equal {
             timeout-ms = <50>;
             key-positions = <2 3>;
             layers = <AL>;
             bindings = <&kp EQUAL>;
         };
-            // u and i = single quote ' key
+        // [u] and [i] = single quote ' key
         combo_sqt {
             timeout-ms = <50>;
             key-positions = <8 9>;
             layers = <AL>;
             bindings = <&kp SQT>;
         };
-            // i and o = backslash \ key
+        // [i] and [o] = backslash \ key
         combo_bslh {
             timeout-ms = <50>;
             key-positions = <9 10>;
             layers = <AL>;
             bindings = <&kp BSLH>;
         };
-        // e and f = left bracket [ key
+        // [d] and [v] = left bracket [ key
         combo_lbkt {
-            timeout-ms = <50>;
-            key-positions = <2 15>;
-            layers = <AL>;
-            bindings = <&kp LBKT>;
-        };
-        // j and i = right bracket ] key
-        combo_rbkt {
-            timeout-ms = <50>;
-            key-positions = <9 20>;
-            layers = <AL>;
-            bindings = <&kp RBKT>;
-        };
-        // d and v = left parentheses ( key
-        combo_lpar {
             timeout-ms = <50>;
             key-positions = <14 27>;
             layers = <AL>;
-            bindings = <&kp LPAR>;
+            bindings = <&kp LBKT>;
         };
-        // m and k = right parentheses ) key
-        combo_rpar {
+        // [k] and [m] = right bracket ] key
+        combo_rbkt {
             timeout-ms = <50>;
             key-positions = <21 32>;
             layers = <AL>;
+            bindings = <&kp RBKT>;
+        };
+        // [s] and [c] = left parentheses ( key
+        combo_lpar {
+            timeout-ms = <50>;
+            key-positions = <13 26>;
+            layers = <AL>;
+            bindings = <&kp LPAR>;
+        };
+        // [l] and [,] = right parentheses ) key
+        combo_rpar {
+            timeout-ms = <50>;
+            key-positions = <22 33>;
+            layers = <AL>;
             bindings = <&kp RPAR>;
         };
-        // c and v = left chevron < key
+        // [c] and [v] = left chevron < key
         combo_lt {
             timeout-ms = <50>;
-            key-positions = <26 27>;
+            key-positions = <12 24>;
             layers = <AL>;
             bindings = <&kp LT>;
         };
-        // m and , = right chevron > key
+        // [;] and [.] = right chevron > key
         combo_gt {
+            timeout-ms = <50>;
+            key-positions = <23 34>;
+            layers = <AL>;
+            bindings = <&kp GT>;
+        };
+        // [z] and [x] = 1 key
+        combo_1 {
+            timeout-ms = <50>;
+            key-positions = <24 25>;
+            layers = <AL>;
+            bindings = <&kp N1>;
+        };
+        // [z], [x] and [c] = 2 key
+        combo_2 {
+            timeout-ms = <50>;
+            key-positions = <24 25 26>;
+            layers = <AL>;
+            bindings = <&kp N2>;
+        };
+        // [x], [c] = 3 key
+        combo_3 {
+            timeout-ms = <50>;
+            key-positions = <25 26>;
+            layers = <AL>;
+            bindings = <&kp N3>;
+        };
+        // [x], [c] and [v] = 4 key
+        combo_4 {
+            timeout-ms = <50>;
+            key-positions = <25 26 27>;
+            layers = <AL>;
+            bindings = <&kp N4>;
+        };
+        // [c], [v] = 5 key
+        combo_5 {
+            timeout-ms = <50>;
+            key-positions = <26 27>;
+            layers = <AL>;
+            bindings = <&kp N5>;
+        };
+        // [m] and [,] = 6 key
+        combo_6 {
             timeout-ms = <50>;
             key-positions = <32 33>;
             layers = <AL>;
-            bindings = <&kp GT>;
+            bindings = <&kp N6>;
+        };
+        // [m], [,] and [.] = 7 key
+        combo_7 {
+            timeout-ms = <50>;
+            key-positions = <32 33 34>;
+            layers = <AL>;
+            bindings = <&kp N7>;
+        };
+        // [,] and [.] = 8 key
+        combo_8 {
+            timeout-ms = <50>;
+            key-positions = <33 34>;
+            layers = <AL>;
+            bindings = <&kp N8>;
+        };
+        // [,], [.], [/] = 9 key
+        combo_9 {
+            timeout-ms = <50>;
+            key-positions = <33 34 35>;
+            layers = <AL>;
+            bindings = <&kp N9>;
+        };
+        // [.] and [/] = 0 key
+        combo_0 {
+            timeout-ms = <50>;
+            key-positions = <34 35>;
+            layers = <AL>;
+            bindings = <&kp N0>;
         };
     };
     behaviors {
