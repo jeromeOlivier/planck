@@ -97,70 +97,70 @@
         };
         // [z] and [x] = 1 key
         combo_1 {
-            timeout-ms = <50>;
+            timeout-ms = <75>;
             key-positions = <24 25>;
             layers = <AL>;
             bindings = <&kp N1>;
         };
         // [z], [x] and [c] = 2 key
         combo_2 {
-            timeout-ms = <50>;
+            timeout-ms = <75>;
             key-positions = <24 25 26>;
             layers = <AL>;
             bindings = <&kp N2>;
         };
         // [x], [c] = 3 key
         combo_3 {
-            timeout-ms = <50>;
+            timeout-ms = <75>;
             key-positions = <25 26>;
             layers = <AL>;
             bindings = <&kp N3>;
         };
         // [x], [c] and [v] = 4 key
         combo_4 {
-            timeout-ms = <50>;
+            timeout-ms = <75>;
             key-positions = <25 26 27>;
             layers = <AL>;
             bindings = <&kp N4>;
         };
         // [c], [v] = 5 key
         combo_5 {
-            timeout-ms = <50>;
+            timeout-ms = <75>;
             key-positions = <26 27>;
             layers = <AL>;
             bindings = <&kp N5>;
         };
         // [m] and [,] = 6 key
         combo_6 {
-            timeout-ms = <50>;
+            timeout-ms = <75>;
             key-positions = <32 33>;
             layers = <AL>;
             bindings = <&kp N6>;
         };
         // [m], [,] and [.] = 7 key
         combo_7 {
-            timeout-ms = <50>;
+            timeout-ms = <75>;
             key-positions = <32 33 34>;
             layers = <AL>;
             bindings = <&kp N7>;
         };
         // [,] and [.] = 8 key
         combo_8 {
-            timeout-ms = <50>;
+            timeout-ms = <75>;
             key-positions = <33 34>;
             layers = <AL>;
             bindings = <&kp N8>;
         };
         // [,], [.], [/] = 9 key
         combo_9 {
-            timeout-ms = <50>;
+            timeout-ms = <75>;
             key-positions = <33 34 35>;
             layers = <AL>;
             bindings = <&kp N9>;
         };
         // [.] and [/] = 0 key
         combo_0 {
-            timeout-ms = <50>;
+            timeout-ms = <75>;
             key-positions = <34 35>;
             layers = <AL>;
             bindings = <&kp N0>;
