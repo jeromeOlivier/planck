@@ -26,7 +26,7 @@
 // key names
 #define SP SPACE
 #define ___ &none
-#define ^^^ &trans
+#define VVV &trans
 
 /* COMBOS */
 #define COMBO_FAST 30
@@ -135,7 +135,7 @@ ZMK_COMBO(combo_rpar, &kp RPAR, MR10 BR9, AL, COMBO_NORM)
         FN { bindings = <
                 &kp ESC      ___          ___         ___           ___    ___   ___   ___    &kp F1       &kp F2      &kp F3      &kp F4
                 &kp LCTRL    &kp LALT     &kp LGUI    &kp LSHFT     ___    ___   ___   ___    &kp F5       &kp F6      &kp F7      &kp F8
-                ___          ___          ___         ^^^           ___    ___   ___   ___    &kp F9       &kp F10     &kp F11     &kp F12
+                ___          ___          ___         VVV           ___    ___   ___   ___    &kp F9       &kp F10     &kp F11     &kp F12
                 ___          ___          ___         ___           ___    ___   ___   ___    ___          ___         ___         ___
             >;
         };
@@ -144,7 +144,7 @@ ZMK_COMBO(combo_rpar, &kp RPAR, MR10 BR9, AL, COMBO_NORM)
                 &kp ESC      ___          ___         ___           ___    ___   ___   ___    ___          ___         ___         &bspc_del
                 &kp LCTRL    &kp LALT     &kp LGUI    &kp LSHFT     ___    ___   ___   ___    ___          ___         ___         ___
                 ___          ___          ___         ___           ___    ___   ___   ___    ___          ___         ___         ___
-                ___          ___          ___         ^^^           ___    ___   ___   ___    ___          &kp RET     ___         ___
+                ___          ___          ___         VVV           ___    ___   ___   ___    ___          &kp RET     ___         ___
             >;
         };
 
@@ -152,7 +152,7 @@ ZMK_COMBO(combo_rpar, &kp RPAR, MR10 BR9, AL, COMBO_NORM)
                 &kp ESC      ___          &kp UP      ___           ___    ___   ___   ___    ___          ___         ___        ___
                 &mup         &kp LEFT     &kp DOWN    &kp RIGHT     ___    ___   ___   ___    &kp RSHFT    &kp RGUI    &kp RALT   &kp RCTRL
                 &mdn         &kp LC(LEFT) &kp LC(UP)  &kp LC(RIGHT) ___    ___   ___   ___    ___          ___         ___        ___
-                ___          ___          ___         ___           ___    ___   ___   ___    ___          ^^^         ___        ___
+                ___          ___          ___         ___           ___    ___   ___   ___    ___          VVV         ___        ___
             >;
         };
     };
