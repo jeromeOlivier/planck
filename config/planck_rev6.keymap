@@ -79,7 +79,7 @@ ZMK_COMBO(combo_rpar, &kp RPAR, MR10 BR9, AL, COMBO_NORM)
 
 /* BEHAVIORS */
 
-    behaviors {
+   / behaviors {
 //    SHIFTED KEYS
       mup: media_up {
         compatible = "zmk,behavior-mod-morph";
@@ -149,7 +149,7 @@ ZMK_COMBO(combo_rpar, &kp RPAR, MR10 BR9, AL, COMBO_NORM)
         };
 
         NV { bindings = <
-                &kp ESC      ___          &kp UP      ___           ___    ___   ___   ___    ___          ___         ___        ___
+                &kp ESC      ___          &kp UP      ___           ___    ___   ___   ___    ___          ___         ___        &bspc_del
                 &mup         &kp LEFT     &kp DOWN    &kp RIGHT     ___    ___   ___   ___    &kp RSHFT    &kp RGUI    &kp RALT   &kp RCTRL
                 &mdn         &kp LC(LEFT) &kp LC(UP)  &kp LC(RIGHT) ___    ___   ___   ___    ___          ___         ___        ___
                 ___          ___          ___         ___           ___    ___   ___   ___    ___          VVV         ___        ___
