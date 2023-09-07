@@ -5,12 +5,12 @@
  */
 
  /*
-                            ╭────────────────────────────────────────────────────╮
-                            │ TR1 TR2 TR3 TR4 TR5 TR6 TR7 TR8 TR9 TR10 TR11 TR12 │
-                            │ MR1 MR2 MR3 MR4 MR5 MR6 MR7 MR8 MR9 MR10 MR11 MR12 │
-                            │ BR1 BR2 BR3 BR4 BR5 BR6 BR7 BR8 BR9 BR10 BR11 BR12 │
-                            │ TH1 TH2 TH3 TH4 TH5 TH6 TH7 TH8 TH9 TH10 TH11 TH12 │
-                            ╰────────────────────────────────────────────────────╯
+         ╭────────────────────────────────────────────────────╮
+         │ TR1 TR2 TR3 TR4 TR5 --- --- TR8 TR9 TR10 TR11 TR12 │
+         │ MR1 MR2 MR3 MR4 MR5 --- --- MR8 MR9 MR10 MR11 MR12 │
+         │ BR1 BR2 BR3 BR4 BR5 --- --- BR8 BR9 BR10 BR11 BR12 │
+         │ --- --- TH3 TH4 TH5 --- --- TH8 TH9 TH10 ---- ---- │
+         ╰────────────────────────────────────────────────────╯
  */
 
 #include <behaviors.dtsi>
@@ -18,190 +18,69 @@
 
 #include "../zmk-nodefree-config/helper.h"
 #include "../zmk-nodefree-config/keypos_48keys.h"
-
+// layers
 #define AL 0
 #define FN 1
-#define SY1 2
-#define SY2 3
-#define NV 4
+#define RT 2
+#define NV 3
+// key names
 #define SP SPACE
 #define ___ &none
 #define ^^^ &trans
 
-// combos
+/* COMBOS */
 #define COMBO_FAST 30
 #define COMBO_NORM 50
-#define COMBO_SLOW 75
+#define COMBO_SLOW 100
 
- ZMK_COMBO(combo_grave, &kp GRAVE, TR1 TR2, AL, COMBO_NORM)
- ZMK_COMBO(combo_esc, &kp ESC, TR1 TR2 TR3, AL, COMBO_NORM)
+ // left hand top row only
+ZMK_COMBO(combo_grave, &kp GRAVE, TR1 TR2, AL, COMBO_SLOW)
+ZMK_COMBO(combo_esc, &kp ESC, TR1 TR2 TR3, AL, COMBO_SLOW)
+ZMK_COMBO(combo_minus, &kp MINUS, TR2 TR3, AL, COMBO_NORM)
+ZMK_COMBO(combo_equal, &kp EQUAL, TR3 TR4, AL, COMBO_NORM)
+ZMK_COMBO(combo_t, &kp T, TR1 TR4, AL, COMBO_SLOW)
 
+// left hand middle row only
+ZMK_COMBO(combo_g, &kp G, MR1 MR4, AL, COMBO_SLOW)
 
-        // [w] + [e] = [-]
-        combo_minus {
-            timeout-ms = <50>;
-            key-positions = <1 2>;
-            layers = <AL>;
-            bindings = <&kp MINUS>;
-        };
-        // [e] + [r] = [=]
-        combo_equal {
-            timeout-ms = <50>;
-            key-positions = <2 3>;
-            layers = <AL>;
-            bindings = <&kp EQUAL>;
-        };
-        // [q] + [r] = [t]
-        combo_t {
-            timeout-ms = <50>;
-            key-positions = <0 3>;
-            layers = <AL>;
-            bindings = <&kp T>;
-        };
-        // [q] + [w] + [e] = [esc]
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <0 1 2>;
-            layers = <AL>;
-            bindings = <&kp ESC>;
-        };
-        // [u] and [i] = single quote ' key
-        combo_sqt {
-            timeout-ms = <50>;
-            key-positions = <8 9>;
-            layers = <AL>;
-            bindings = <&kp SQT>;
-        };
-        // [i] and [o] = backslash \ key
-        combo_bslh {
-            timeout-ms = <50>;
-            key-positions = <9 10>;
-            layers = <AL>;
-            bindings = <&kp BSLH>;
-        };
-        // [d] and [v] = left bracket [ key
-        combo_lbkt {
-            timeout-ms = <50>;
-            key-positions = <14 27>;
-            layers = <AL>;
-            bindings = <&kp LBKT>;
-        };
-        // [k] and [m] = right bracket ] key
-        combo_rbkt {
-            timeout-ms = <50>;
-            key-positions = <21 32>;
-            layers = <AL>;
-            bindings = <&kp RBKT>;
-        };
-        // [s] and [c] = left parentheses ( key
-        combo_lpar {
-            timeout-ms = <50>;
-            key-positions = <13 26>;
-            layers = <AL>;
-            bindings = <&kp LPAR>;
-        };
-        // [l] and [,] = right parentheses ) key
-        combo_rpar {
-            timeout-ms = <50>;
-            key-positions = <22 33>;
-            layers = <AL>;
-            bindings = <&kp RPAR>;
-        };
-        // [a] and [x] = left chevron < key
-        combo_lt {
-            timeout-ms = <100>;
-            key-positions = <12 25>;
-            layers = <AL>;
-            bindings = <&kp LT>;
-        };
-        // [;] and [.] = right chevron > key
-        combo_gt {
-            timeout-ms = <100>;
-            key-positions = <23 34>;
-            layers = <AL>;
-            bindings = <&kp GT>;
-        };
-        // [z] and [x] = 1 key
-        combo_1 {
-            timeout-ms = <75>;
-            key-positions = <24 25>;
-            layers = <AL>;
-            bindings = <&kp N1>;
-        };
-        // [z], [x] and [c] = 2 key
-        combo_2 {
-            timeout-ms = <75>;
-            key-positions = <24 25 26>;
-            layers = <AL>;
-            bindings = <&kp N2>;
-        };
-        // [x], [c] = 3 key
-        combo_3 {
-            timeout-ms = <75>;
-            key-positions = <25 26>;
-            layers = <AL>;
-            bindings = <&kp N3>;
-        };
-        // [x], [c] and [v] = 4 key
-        combo_4 {
-            timeout-ms = <75>;
-            key-positions = <25 26 27>;
-            layers = <AL>;
-            bindings = <&kp N4>;
-        };
-        // [c], [v] = 5 key
-        combo_5 {
-            timeout-ms = <75>;
-            key-positions = <26 27>;
-            layers = <AL>;
-            bindings = <&kp N5>;
-        };
-        // [m] and [,] = 6 key
-        combo_6 {
-            timeout-ms = <75>;
-            key-positions = <32 33>;
-            layers = <AL>;
-            bindings = <&kp N6>;
-        };
-        // [m], [,] and [.] = 7 key
-        combo_7 {
-            timeout-ms = <75>;
-            key-positions = <32 33 34>;
-            layers = <AL>;
-            bindings = <&kp N7>;
-        };
-        // [,] and [.] = 8 key
-        combo_8 {
-            timeout-ms = <75>;
-            key-positions = <33 34>;
-            layers = <AL>;
-            bindings = <&kp N8>;
-        };
-        // [,], [.], [/] = 9 key
-        combo_9 {
-            timeout-ms = <75>;
-            key-positions = <33 34 35>;
-            layers = <AL>;
-            bindings = <&kp N9>;
-        };
-        // [.] and [/] = 0 key
-        combo_0 {
-            timeout-ms = <75>;
-            key-positions = <34 35>;
-            layers = <AL>;
-            bindings = <&kp N0>;
-        };
-    };
+// left hand bottom row only
+ZMK_COMBO(combo_1, &kp N1, BR1 BR2, AL, COMBO_SLOW)
+ZMK_COMBO(combo_2, &kp N2, BR1 BR2 BR3, AL, COMBO_SLOW)
+ZMK_COMBO(combo_3, &kp N3, BR2 BR3, AL, COMBO_NORM)
+ZMK_COMBO(combo_4, &kp N4, BR2 BR3 BR4, AL, COMBO_NORM)
+ZMK_COMBO(combo_5, &kp N5, BR3 BR4, AL, COMBO_NORM)
+
+// left hand diagonal combos
+ZMK_COMBO(combo_lbkt, &kp LBKT, TR2 BR4, AL, COMBO_SLOW)
+ZMK_COMBO(combo_lt, &kp LT, TR2 MR3, AL, COMBO_NORM)
+ZMK_COMBO(combo_lpar, &kp LPAR, MR3 BR4, AL, COMBO_NORM)
+
+// right hand top row only
+ZMK_COMBO(combo_sqt, &kp SQT, TR9 TR10, AL, COMBO_NORM)
+ZMK_COMBO(combo_bslh, &kp BSLH, TR10 TR11, AL, COMBO_NORM)
+ZMK_COMBO(combo_del, &kp DEL, TR10 TR11 TR12, AL, COMBO_SLOW)
+ZMK_COMBO(combo_bspc, &kp BACKSPACE, TR11 TR12, AL, COMBO_SLOW)
+ZMK_COMBO(combo_y, &kp Y, TR9 TR12, AL, COMBO_NORM)
+
+// right hand middle row only
+ZMK_COMBO(combo_h, &kp H, MR9 MR12, AL, COMBO_SLOW)
+
+// right hand bottom row only
+ZMK_COMBO(combo_6, &kp N6, BR9 BR10, AL, COMBO_NORM)
+ZMK_COMBO(combo_7, &kp N7, BR9 BR10 BR11, AL, COMBO_NORM)
+ZMK_COMBO(combo_8, &kp N8, BR10 BR11, AL, COMBO_NORM)
+ZMK_COMBO(combo_9, &kp N9, BR10 BR11 BR12, AL, COMBO_SLOW)
+ZMK_COMBO(combo_0, &kp N0, BR11 BR12, AL, COMBO_SLOW)
+
+// right hand diagonal combos
+ZMK_COMBO(combo_rbkt, &kp RBKT, TR11 BR9, AL, COMBO_SLOW)
+ZMK_COMBO(combo_gt, &kp GT, TR11 MR10, AL, COMBO_NORM)
+ZMK_COMBO(combo_rpar, &kp RPAR, MR10 BR9, AL, COMBO_NORM)
+
+/* BEHAVIORS */
+
     behaviors {
 //    SHIFTED KEYS
-      bspc_del: backspace_delete {
-        compatible = "zmk,behavior-mod-morph";
-        label = "BACKSPACE_DELETE";
-        #binding-cells = <0>;
-        bindings = <&kp BACKSPACE>, <&kp DELETE>;
-        mods = <(MOD_LSFT|MOD_RSFT)>;
-      };
-
       mup: media_up {
         compatible = "zmk,behavior-mod-morph";
         label = "MEDIA_UP";
@@ -216,30 +95,6 @@
         #binding-cells = <0>;
         bindings = <&kp C_VOL_DN>, <&kp F14>;
         mods = <(MOD_RSFT)>;
-      };
-
-      S8: special_8 {
-        compatible = "zmk,behavior-mod-morph";
-        label = "SPECIAL_8";
-        #binding-cells = <0>;
-        bindings = <&kp N8>, <&kp LPAR>;
-        mods = <(MOD_LSFT)>;
-      };
-
-      S9: special_9 {
-        compatible = "zmk,behavior-mod-morph";
-        label = "SPECIAL_9";
-        #binding-cells = <0>;
-        bindings = <&kp N9>, <&kp RPAR>;
-        mods = <(MOD_LSFT)>;
-      };
-
-      S0: special_0 {
-        compatible = "zmk,behavior-mod-morph";
-        label = "SPECIAL_0";
-        #binding-cells = <0>;
-        bindings = <&kp N0>, <&kp STAR>;
-        mods = <(MOD_LSFT)>;
       };
 
 //    HOME ROWS
@@ -262,36 +117,6 @@
         flavor = "tap-preferred";
         bindings = <&kp>, <&kp >;
       };
-
-      hm8: homerow_8 {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HOMEROW_8";
-        #binding-cells = <2>;
-        tapping-term-ms = <150>;
-        quick-tap-ms = <125>;
-        flavor = "tap-preferred";
-        bindings = <&kp>, <&S8>;
-      };
-
-      hm9: homerow_9 {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HOMEROW_9";
-        #binding-cells = <2>;
-        tapping-term-ms = <150>;
-        quick-tap-ms = <125>;
-        flavor = "tap-preferred";
-        bindings = <&kp>, <&S9>;
-      };
-
-      hm0: homerow_0 {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HOMEROW_0";
-        #binding-cells = <2>;
-        tapping-term-ms = <200>;
-        quick-tap-ms = <150>;
-        flavor = "tap-preferred";
-        bindings = <&kp>, <&S0>;
-      };
     };
 
     chosen { zmk,matrix_transform = &layout_grid_transform; };
@@ -303,39 +128,31 @@
                 &kp Q        &kp W        &kp E       &kp R         &kp T  ___  ___  &kp Y  &kp U         &kp I      &kp O      &pm SP P
                 &pm LCTRL A  &hm LALT S   &hm LGUI D  &hm LSHFT F   &kp G  ___  ___  &kp H  &hm RSHFT J   &hm RGUI K &hm RALT L &pm RCTRL SEMI
                 &kp Z        &kp X        &kp C       &lt FN V      &kp B  ___  ___  &kp N  &kp M         &kp COMMA  &kp DOT    &kp FSLH
-                ___          ___          &kp CAPS    &lt SY1 TAB   ___    ___  ___  ___    &lt SY2 SP    &mo NV     ___        ___
+                ___          ___          &kp CAPS    &lt RT TAB    ___    ___  ___  ___    ___           &lt NV SP  ___        ___
             >;
         };
 
         FN { bindings = <
-                &kp ESC      &none        &none       &none         &none  &none &none &none  &kp F1       &kp F2      &kp F3      &kp F4
-                &kp LCTRL    &kp LALT     &kp LGUI    &kp LSHFT     &none  &none &none &none  &kp F5       &kp F6      &kp F7      &kp F8
-                &none        &none        &none       ^^^           &none  &none &none &none  &kp F9       &kp F10     &kp F11     &kp F12
-                &none        &none        &none       &none         &none  &none &none &none  &none        &none       &none       &none
+                &kp ESC      ___          ___         ___           ___    ___   ___   ___    &kp F1       &kp F2      &kp F3      &kp F4
+                &kp LCTRL    &kp LALT     &kp LGUI    &kp LSHFT     ___    ___   ___   ___    &kp F5       &kp F6      &kp F7      &kp F8
+                ___          ___          ___         ^^^           ___    ___   ___   ___    &kp F9       &kp F10     &kp F11     &kp F12
+                ___          ___          ___         ___           ___    ___   ___   ___    ___          ___         ___         ___
             >;
         };
 
-        SY1 { bindings = <
-                &kp ESC      &none        &none       &none         &none  &none &none &none  &none        &none       &none       &bspc_del
-                &pm LCTRL N1 &hm LALT N2  &hm LGUI N3 &hm LSHFT N4  &kp N5 &none &none &kp N6 &hm RSHFT N7 &hm8 RGUI 0 &hm9 RALT 0 &hm0 RCTRL 0
-                &none        &none        &none       &none         &none  &none &none &none  &none        &none       &none       &none
-                &none        &none        &none       ^^^           &none  &none &none &none  &kp RET      &none       &none       &none
-            >;
-        };
-
-        SY2 { bindings = <
-                &kp ESC      &none        &none       &none         &none  &none &none &none  &none        &none       &none       &bspc_del
-                &pm LCTRL N1 &hm LALT N2  &hm LGUI N3 &hm LSHFT N4  &kp N5 &none &none &kp N6 &hm RSHFT N7 &hm8 RGUI 0 &hm9 RALT 0 &hm0 RCTRL 0
-                &none        &none        &none       &none         &none  &none &none &none  &none        &none       &none       &none
-                &none        &none        &kp CAPS    &kp TAB       &none  &none &none &none  ^^^          &none       &none       &none
+        RT { bindings = <
+                &kp ESC      ___          ___         ___           ___    ___   ___   ___    ___          ___         ___         &bspc_del
+                &kp LCTRL    &kp LALT     &kp LGUI    &kp LSHFT     ___    ___   ___   ___    ___          ___         ___         ___
+                ___          ___          ___         ___           ___    ___   ___   ___    ___          ___         ___         ___
+                ___          ___          ___         ^^^           ___    ___   ___   ___    ___          &kp RET     ___         ___
             >;
         };
 
         NV { bindings = <
-                &kp ESC      &none        &kp UP      &none         &none  &none &none &none  &none        &none       &none      &bspc_del
-                &mup         &kp LEFT     &kp DOWN    &kp RIGHT     &none  &none &none &none  &kp RSHFT    &kp RGUI    &kp RALT   &kp RCTRL
-                &mdn         &kp LC(LEFT) &kp LC(UP)  &kp LC(RIGHT) &none  &none &none &none  &none        &none       &none      &none
-                &none        &none        &none       &none         &none  &none &none &none  &none        ^^^         &none      &none
+                &kp ESC      ___          &kp UP      ___           ___    ___   ___   ___    ___          ___         ___        ___
+                &mup         &kp LEFT     &kp DOWN    &kp RIGHT     ___    ___   ___   ___    &kp RSHFT    &kp RGUI    &kp RALT   &kp RCTRL
+                &mdn         &kp LC(LEFT) &kp LC(UP)  &kp LC(RIGHT) ___    ___   ___   ___    ___          ___         ___        ___
+                ___          ___          ___         ___           ___    ___   ___   ___    ___          ^^^         ___        ___
             >;
         };
     };
