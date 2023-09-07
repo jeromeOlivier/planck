@@ -4,8 +4,20 @@
  * SPDX-License-Identifier: MIT
  */
 
+ /*
+                            ╭────────────────────────────────────────────────────╮
+                            │ TR1 TR2 TR3 TR4 TR5 TR6 TR7 TR8 TR9 TR10 TR11 TR12 │
+                            │ MR1 MR2 MR3 MR4 MR5 MR6 MR7 MR8 MR9 MR10 MR11 MR12 │
+                            │ BR1 BR2 BR3 BR4 BR5 BR6 BR7 BR8 BR9 BR10 BR11 BR12 │
+                            │ TH1 TH2 TH3 TH4 TH5 TH6 TH7 TH8 TH9 TH10 TH11 TH12 │
+                            ╰────────────────────────────────────────────────────╯
+ */
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+
+#include "../zmk-nodefree-config/helper.h"
+#include "../zmk-nodefree-config/keypos_48keys.h"
 
 #define AL 0
 #define FN 1
@@ -14,30 +26,44 @@
 #define NV 4
 #define SP SPACE
 #define ___ &none
+#define ^^^ &trans
 
-/ {
-    combos {
-        compatible = "zmk,combos";
-        // [q] and [w] = grave ` key
-        combo_grave {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            layers = <AL>;
-            bindings = <&kp GRAVE>;
-        };
-        // [w] and [e] = minus - key
+// combos
+#define COMBO_FAST 30
+#define COMBO_NORM 50
+#define COMBO_SLOW 75
+
+ ZMK_COMBO(combo_grave, &kp GRAVE, TR1 TR2, AL, COMBO_NORM)
+ ZMK_COMBO(combo_esc, &kp ESC, TR1 TR2 TR3, AL, COMBO_NORM)
+
+
+        // [w] + [e] = [-]
         combo_minus {
             timeout-ms = <50>;
             key-positions = <1 2>;
             layers = <AL>;
             bindings = <&kp MINUS>;
         };
-        // [e] and [r] = equal = key
+        // [e] + [r] = [=]
         combo_equal {
             timeout-ms = <50>;
             key-positions = <2 3>;
             layers = <AL>;
             bindings = <&kp EQUAL>;
+        };
+        // [q] + [r] = [t]
+        combo_t {
+            timeout-ms = <50>;
+            key-positions = <0 3>;
+            layers = <AL>;
+            bindings = <&kp T>;
+        };
+        // [q] + [w] + [e] = [esc]
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <0 1 2>;
+            layers = <AL>;
+            bindings = <&kp ESC>;
         };
         // [u] and [i] = single quote ' key
         combo_sqt {
@@ -284,7 +310,7 @@
         FN { bindings = <
                 &kp ESC      &none        &none       &none         &none  &none &none &none  &kp F1       &kp F2      &kp F3      &kp F4
                 &kp LCTRL    &kp LALT     &kp LGUI    &kp LSHFT     &none  &none &none &none  &kp F5       &kp F6      &kp F7      &kp F8
-                &none        &none        &none       &trans        &none  &none &none &none  &kp F9       &kp F10     &kp F11     &kp F12
+                &none        &none        &none       ^^^           &none  &none &none &none  &kp F9       &kp F10     &kp F11     &kp F12
                 &none        &none        &none       &none         &none  &none &none &none  &none        &none       &none       &none
             >;
         };
@@ -293,7 +319,7 @@
                 &kp ESC      &none        &none       &none         &none  &none &none &none  &none        &none       &none       &bspc_del
                 &pm LCTRL N1 &hm LALT N2  &hm LGUI N3 &hm LSHFT N4  &kp N5 &none &none &kp N6 &hm RSHFT N7 &hm8 RGUI 0 &hm9 RALT 0 &hm0 RCTRL 0
                 &none        &none        &none       &none         &none  &none &none &none  &none        &none       &none       &none
-                &none        &none        &none       &trans        &none  &none &none &none  &kp RET      &none       &none       &none
+                &none        &none        &none       ^^^           &none  &none &none &none  &kp RET      &none       &none       &none
             >;
         };
 
@@ -301,7 +327,7 @@
                 &kp ESC      &none        &none       &none         &none  &none &none &none  &none        &none       &none       &bspc_del
                 &pm LCTRL N1 &hm LALT N2  &hm LGUI N3 &hm LSHFT N4  &kp N5 &none &none &kp N6 &hm RSHFT N7 &hm8 RGUI 0 &hm9 RALT 0 &hm0 RCTRL 0
                 &none        &none        &none       &none         &none  &none &none &none  &none        &none       &none       &none
-                &none        &none        &kp CAPS    &kp TAB       &none  &none &none &none  &trans       &none       &none       &none
+                &none        &none        &kp CAPS    &kp TAB       &none  &none &none &none  ^^^          &none       &none       &none
             >;
         };
 
@@ -309,7 +335,7 @@
                 &kp ESC      &none        &kp UP      &none         &none  &none &none &none  &none        &none       &none      &bspc_del
                 &mup         &kp LEFT     &kp DOWN    &kp RIGHT     &none  &none &none &none  &kp RSHFT    &kp RGUI    &kp RALT   &kp RCTRL
                 &mdn         &kp LC(LEFT) &kp LC(UP)  &kp LC(RIGHT) &none  &none &none &none  &none        &none       &none      &none
-                &none        &none        &none       &none         &none  &none &none &none  &none        &trans      &none      &none
+                &none        &none        &none       &none         &none  &none &none &none  &none        ^^^         &none      &none
             >;
         };
     };
