@@ -33,7 +33,7 @@
 // combos
 #define COMBO_FAST 30
 #define COMBO_NORM 50
-#define COMBO_SLOW 100
+#define COMBO_SLOW 70
 
 /* KEYS */
 // left hand top row only
