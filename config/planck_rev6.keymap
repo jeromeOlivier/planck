@@ -52,6 +52,8 @@ ZMK_COMBO(combo_2, &kp N2, BR1 BR2 BR3, AL, COMBO_SLOW)
 ZMK_COMBO(combo_3, &kp N3, BR2 BR3, AL, COMBO_NORM)
 ZMK_COMBO(combo_4, &kp N4, BR2 BR3 BR4, AL, COMBO_NORM)
 ZMK_COMBO(combo_5, &kp N5, BR3 BR4, AL, COMBO_NORM)
+ZMK_COMBO(combo_b, &kp B, BR1 BR4, AL, COMBO_NORM)
+
 
 // left hand diagonal combos
 ZMK_COMBO(combo_lbkt, &kp LBKT, TR2 BR4, AL, COMBO_SLOW)
@@ -61,8 +63,6 @@ ZMK_COMBO(combo_lpar, &kp LPAR, MR3 BR4, AL, COMBO_NORM)
 // right hand top row only
 ZMK_COMBO(combo_sqt, &kp SQT, TR9 TR10, AL, COMBO_NORM)
 ZMK_COMBO(combo_bslh, &kp BSLH, TR10 TR11, AL, COMBO_NORM)
-ZMK_COMBO(combo_del, &kp DEL, TR10 TR11 TR12, AL, COMBO_SLOW)
-ZMK_COMBO(combo_bspc, &kp BACKSPACE, TR11 TR12, AL, COMBO_NORM)
 ZMK_COMBO(combo_y, &kp Y, TR9 TR12, AL, COMBO_NORM)
 
 // right hand middle row only
@@ -74,6 +74,7 @@ ZMK_COMBO(combo_7, &kp N7, BR9 BR10 BR11, AL, COMBO_NORM)
 ZMK_COMBO(combo_8, &kp N8, BR10 BR11, AL, COMBO_NORM)
 ZMK_COMBO(combo_9, &kp N9, BR10 BR11 BR12, AL, COMBO_SLOW)
 ZMK_COMBO(combo_0, &kp N0, BR11 BR12, AL, COMBO_SLOW)
+ZMK_COMBO(combo_n, &kp N, BR9 BR12, AL, COMBO_SLOW)
 
 // right hand diagonal combos
 ZMK_COMBO(combo_rbkt, &kp RBKT, TR11 BR9, AL, COMBO_SLOW)
