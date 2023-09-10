@@ -26,11 +26,6 @@ ZMK_COMBO(combo_minus, &kp MINUS, TR2 TR3, AL, COMBO_NORM)
 ZMK_COMBO(combo_equal, &kp EQUAL, TR3 TR4, AL, COMBO_NORM)
 
 // left hand middle row only
-ZMK_COMBO(combo_1, &kp N1, MR1 MR2, AL, COMBO_SLOW)
-ZMK_COMBO(combo_2, &kp N2, MR1 MR2 MR3, AL, COMBO_SLOW)
-ZMK_COMBO(combo_3, &kp N3, MR2 MR3, AL, COMBO_NORM)
-ZMK_COMBO(combo_4, &kp N4, MR2 MR3 MR4, AL, COMBO_NORM)
-ZMK_COMBO(combo_5, &kp N5, MR3 MR4, AL, COMBO_NORM)
 
 // left hand bottom row only
 ZMK_COMBO(combo_1, &kp N1, BR1 BR2, AL, COMBO_SLOW)
