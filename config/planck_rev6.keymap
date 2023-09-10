@@ -27,9 +27,10 @@
 #define RT 2
 #define NV 3
 // key names
-#define SP SPACE
 #define ___ &none
 #define VVV &trans
+#define SP SPACE
+// modifiers
 #define LCTRL LCT
 #define RCTRL RCT
 #define LALT LAL
@@ -38,10 +39,11 @@
 #define RGUI RCM
 #define LSHFT LSH
 #define RSHFT RSH
+// to navigate through spaces
 #define LC(LEFT) &kp GL
 #define LC(UP) &kp GU
 #define LC(RIGHT) &kp GR
-// combos
+// combo speeds
 #define COMBO_FAST 30
 #define COMBO_NORM 50
 #define COMBO_SLOW 80
@@ -61,7 +63,6 @@ ZMK_COMBO(combo_2, &kp N2, BR1 BR2 BR3, AL, COMBO_SLOW)
 ZMK_COMBO(combo_3, &kp N3, BR2 BR3, AL, COMBO_NORM)
 ZMK_COMBO(combo_4, &kp N4, BR2 BR3 BR4, AL, COMBO_NORM)
 ZMK_COMBO(combo_5, &kp N5, BR3 BR4, AL, COMBO_NORM)
-
 
 // left hand diagonal combos
 ZMK_COMBO(combo_lbkt, &kp LBKT, TR2 BR4, AL, COMBO_SLOW)
@@ -90,6 +91,8 @@ ZMK_COMBO(combo_rpar, &kp RPAR, MR10 BR9, AL, COMBO_NORM)
 ZMK_BEHAVIOR(mup, mod_morph, mods = <(MOD_RSFT)>; bindings = <&kp C_VOL_UP>, <&kp F15>;)
 ZMK_BEHAVIOR(mdn, mod_morph, mods = <(MOD_RSFT)>; bindings = <&kp C_VOL_DN>, <&kp F14>;)
 ZMK_BEHAVIOR(bspc_del, mod_morph, mods = <(MOD_LSFT)>; bindings = <&kp BSPC>, <&kp DELETE>;)
+
+/* ORIGINAL HOME ROW MODS (delete?) */
 ZMK_BEHAVIOR(hm, hold_tap,
     flavor = "tap-preferred";
     tapping-term-ms = <150>;
@@ -104,6 +107,28 @@ ZMK_BEHAVIOR(pm, hold_tap,
     global-quick-tap;
     bindings = <&kp>, <&kp>;
     )
+
+/* NEW HOME ROW MODS */
+/* LEFT HAND MODS */
+ZMK_BEHAVIOR(hml, hold_tap,
+    flavor = "balanced";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <175>;                // repeat on tap-into-hold
+    global-quick-tap = <150>;         // requires PR #1387
+    bindings = <&kp>, <&kp>;
+    hold-trigger-key-positions = <KEYS_R>;
+    hold-trigger-on-release;             // delay positional check until key-release
+)
+/* RIGHT HAND MODS */
+ZMK_BEHAVIOR(hmr, hold_tap,
+    flavor = "balanced";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <175>;                // repeat on tap-into-hold
+    global-quick-tap-ms = <150>;         // requires PR #1387
+    bindings = <&kp>, <&kp>;
+    hold-trigger-key-positions = <KEYS_L THUMBS>;
+    hold-trigger-on-release;             // delay positional check until key-release
+)
 
 /* LAYERS */
 ZMK_LAYER(AL,
