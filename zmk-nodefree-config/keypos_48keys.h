@@ -99,4 +99,4 @@
 // combo speeds
 #define COMBO_FAST 30
 #define COMBO_NORM 50
-#define COMBO_SLOW 80
+#define COMBO_SLOW 90
