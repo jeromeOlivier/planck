@@ -5,12 +5,10 @@
 */
 
 /*
-        ╭────────────────────────────────────────────────────╮
-        │ TR1 TR2 TR3 TR4 TR5 --- --- TR8 TR9 TR10 TR11 TR12 │
-        │ MR1 MR2 MR3 MR4 MR5 --- --- MR8 MR9 MR10 MR11 MR12 │
-        │ BR1 BR2 BR3 BR4 BR5 --- --- BR8 BR9 BR10 BR11 BR12 │
-        │ --- --- TH3 TH4 TH5 --- --- TH8 TH9 TH10 ---- ---- │
-        ╰────────────────────────────────────────────────────╯
+        TR1 TR2 TR3 TR4 TR5 --- --- TR8 TR9 TR10 TR11 TR12
+        MR1 MR2 MR3 MR4 MR5 --- --- MR8 MR9 MR10 MR11 MR12
+        BR1 BR2 BR3 BR4 BR5 --- --- BR8 BR9 BR10 BR11 BR12
+        --- --- TH3 TH4 TH5 --- --- TH8 TH9 TH10 ---- ----
 */
 
 /* INCLUDES */
@@ -19,34 +17,6 @@
 
 #include "../zmk-nodefree-config/helper.h"
 #include "../zmk-nodefree-config/keypos_48keys.h"
-
-/* DEFINITIONS */
-// layers
-#define AL 0
-#define FN 1
-#define RT 2
-#define NV 3
-// key names
-#define ___ &none
-#define VVV &trans
-#define SP SPACE
-// modifiers
-#define LCT LEFT_CONTROL
-#define RCT RIGHT_CONTROL
-#define LAL LEFT_ALT
-#define RAL RIGHT_ALT
-#define LCM LEFT_GUI
-#define RCM RIGHT_GUI
-#define LSH LEFT_SHIFT
-#define RSH RIGHT_SHIFT
-// to navigate through spaces
-#define GL LC(LEFT)
-#define GU LC(UP)
-#define GR LC(RIGHT)
-// combo speeds
-#define COMBO_FAST 30
-#define COMBO_NORM 50
-#define COMBO_SLOW 80
 
 /* KEYS */
 // left hand top row only
@@ -92,25 +62,10 @@ ZMK_BEHAVIOR(mup, mod_morph, mods = <(MOD_RSFT)>; bindings = <&kp C_VOL_UP>, <&k
 ZMK_BEHAVIOR(mdn, mod_morph, mods = <(MOD_RSFT)>; bindings = <&kp C_VOL_DN>, <&kp F14>;)
 ZMK_BEHAVIOR(bspc_del, mod_morph, mods = <(MOD_LSFT)>; bindings = <&kp BSPC>, <&kp DELETE>;)
 
-/* ORIGINAL HOME ROW MODS (delete?) */
-//ZMK_BEHAVIOR(hm, hold_tap,
-//    flavor = "tap-preferred";
-//    tapping-term-ms = <150>;
-//    quick-tap-ms = <125>;
-//    global-quick-tap;
-//    bindings = <&kp>, <&kp>;
-//    )
-//ZMK_BEHAVIOR(pm, hold_tap,
-//    flavor = "tap-preferred";
-//    tapping-term-ms = <200>;
-//    quick-tap-ms = <150>;
-//    global-quick-tap;
-//    bindings = <&kp>, <&kp>;
-//    )
-
 /* NEW HOME ROW MODS */
 /* LEFT HAND MODS */
-ZMK_BEHAVIOR(hl, hold_tap, flavor = "balanced";
+ZMK_BEHAVIOR(hl, hold_tap,
+    flavor = "balanced";
     tapping-term-ms = <280>;
     quick-tap-ms = <175>; // repeat on tap-into-hold
     global-quick-tap = <150>;

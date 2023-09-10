@@ -69,3 +69,34 @@
 #define KEYS_L TR1 TR2 TR3 TR4 TR5 MR1 MR2 MR3 MR4 MR5 BR1 BR2 BR3 BR4 BR5
 #define KEYS_R TR8 TR9 TR10 TR11 TR12 MR8 MR9 MR10 MR11 MR12 BR8 BR9 BR10 BR11 BR12
 #define KEYS_THUMB TH3 TH4 TH5 TH8 TH9 TH10
+
+// layers
+#define AL 0
+#define FN 1
+#define RT 2
+#define NV 3
+
+// key names
+#define ___ &none
+#define VVV &trans
+#define SP SPACE
+
+// modifiers
+#define LCT LEFT_CONTROL
+#define RCT RIGHT_CONTROL
+#define LAL LEFT_ALT
+#define RAL RIGHT_ALT
+#define LCM LEFT_GUI
+#define RCM RIGHT_GUI
+#define LSH LEFT_SHIFT
+#define RSH RIGHT_SHIFT
+
+// to navigate through spaces
+#define GL LC(LEFT)
+#define GU LC(UP)
+#define GR LC(RIGHT)
+
+// combo speeds
+#define COMBO_FAST 30
+#define COMBO_NORM 50
+#define COMBO_SLOW 80
