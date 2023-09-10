@@ -110,24 +110,23 @@ ZMK_BEHAVIOR(bspc_del, mod_morph, mods = <(MOD_LSFT)>; bindings = <&kp BSPC>, <&
 
 /* NEW HOME ROW MODS */
 /* LEFT HAND MODS */
-ZMK_BEHAVIOR(hl, hold_tap,
-    flavor = "balanced";
+ZMK_BEHAVIOR(hl, hold_tap, flavor = "balanced";
     tapping-term-ms = <280>;
-    quick-tap-ms = <175>;                // repeat on tap-into-hold
-//    global-quick-tap = <150>;
+    quick-tap-ms = <175>; // repeat on tap-into-hold
+    global-quick-tap = <150>;
     bindings = <&kp>, <&kp>;
     hold-trigger-key-positions = <KEYS_R THUMBS>;
-    hold-trigger-on-release;             // delay positional check until key-release
+    hold-trigger-on-release; // delay positional check until key-release
 )
 /* RIGHT HAND MODS */
 ZMK_BEHAVIOR(hr, hold_tap,
     flavor = "balanced";
     tapping-term-ms = <280>;
-    quick-tap-ms = <175>;                // repeat on tap-into-hold
-//    global-quick-tap = <150>;
+    quick-tap-ms = <175>; // repeat on tap-into-hold
+    global-quick-tap = <150>;
     bindings = <&kp>, <&kp>;
     hold-trigger-key-positions = <KEYS_L THUMBS>;
-    hold-trigger-on-release;             // delay positional check until key-release
+    hold-trigger-on-release; // delay positional check until key-release
 )
 
 /* LAYERS */
