@@ -31,18 +31,18 @@
 #define VVV &trans
 #define SP SPACE
 // modifiers
-#define LCTRL LCT
-#define RCTRL RCT
-#define LALT LAL
-#define RALT RAL
-#define LGUI LCM
-#define RGUI RCM
-#define LSHFT LSH
-#define RSHFT RSH
+#define LCT LEFT_CONTROL
+#define RCT RIGHT_CONTROL
+#define LAL LEFT_ALT
+#define RAL RIGHT_ALT
+#define LCM LEFT_GUI
+#define RCM RIGHT_GUI
+#define LSH LEFT_SHIFT
+#define RSH RIGHT_SHIFT
 // to navigate through spaces
-#define LC(LEFT) &kp GL
-#define LC(UP) &kp GU
-#define LC(RIGHT) &kp GR
+#define GL LC(LEFT)
+#define GU LC(UP)
+#define GR LC(RIGHT)
 // combo speeds
 #define COMBO_FAST 30
 #define COMBO_NORM 50
@@ -93,20 +93,20 @@ ZMK_BEHAVIOR(mdn, mod_morph, mods = <(MOD_RSFT)>; bindings = <&kp C_VOL_DN>, <&k
 ZMK_BEHAVIOR(bspc_del, mod_morph, mods = <(MOD_LSFT)>; bindings = <&kp BSPC>, <&kp DELETE>;)
 
 /* ORIGINAL HOME ROW MODS (delete?) */
-ZMK_BEHAVIOR(hm, hold_tap,
-    flavor = "tap-preferred";
-    tapping-term-ms = <150>;
-    quick-tap-ms = <125>;
-    global-quick-tap;
-    bindings = <&kp>, <&kp>;
-    )
-ZMK_BEHAVIOR(pm, hold_tap,
-    flavor = "tap-preferred";
-    tapping-term-ms = <200>;
-    quick-tap-ms = <150>;
-    global-quick-tap;
-    bindings = <&kp>, <&kp>;
-    )
+//ZMK_BEHAVIOR(hm, hold_tap,
+//    flavor = "tap-preferred";
+//    tapping-term-ms = <150>;
+//    quick-tap-ms = <125>;
+//    global-quick-tap;
+//    bindings = <&kp>, <&kp>;
+//    )
+//ZMK_BEHAVIOR(pm, hold_tap,
+//    flavor = "tap-preferred";
+//    tapping-term-ms = <200>;
+//    quick-tap-ms = <150>;
+//    global-quick-tap;
+//    bindings = <&kp>, <&kp>;
+//    )
 
 /* NEW HOME ROW MODS */
 /* LEFT HAND MODS */
@@ -114,7 +114,7 @@ ZMK_BEHAVIOR(hl, hold_tap,
     flavor = "balanced";
     tapping-term-ms = <280>;
     quick-tap-ms = <175>;                // repeat on tap-into-hold
-    global-quick-tap = <150>;
+//    global-quick-tap = <150>;
     bindings = <&kp>, <&kp>;
     hold-trigger-key-positions = <KEYS_R THUMBS>;
     hold-trigger-on-release;             // delay positional check until key-release
@@ -124,7 +124,7 @@ ZMK_BEHAVIOR(hr, hold_tap,
     flavor = "balanced";
     tapping-term-ms = <280>;
     quick-tap-ms = <175>;                // repeat on tap-into-hold
-    global-quick-tap = <150>;
+//    global-quick-tap = <150>;
     bindings = <&kp>, <&kp>;
     hold-trigger-key-positions = <KEYS_L THUMBS>;
     hold-trigger-on-release;             // delay positional check until key-release
