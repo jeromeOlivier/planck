@@ -116,7 +116,7 @@ ZMK_BEHAVIOR(hl, hold_tap,
     quick-tap-ms = <175>;                // repeat on tap-into-hold
     global-quick-tap = <150>;
     bindings = <&kp>, <&kp>;
-    hold-trigger-key-positions = <KEYS_R>;
+    hold-trigger-key-positions = <KEYS_R THUMBS>;
     hold-trigger-on-release;             // delay positional check until key-release
 )
 /* RIGHT HAND MODS */
