@@ -91,6 +91,9 @@
 #define LSH LEFT_SHIFT
 #define RSH RIGHT_SHIFT
 
+// mod taps
+#define BSPC_P &mt BSPC P
+
 // to navigate through spaces
 #define GL LC(LEFT)
 #define GU LC(UP)
