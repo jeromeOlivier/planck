@@ -65,24 +65,21 @@ ZMK_BEHAVIOR(bspc_del, hold_tap,
     flavor = "tap-preferred";
     tapping-term-ms = <200>;
     quick-tap-ms = <150>;
-    global-quick-tap;
     bindings = <&bdel>, <&kp>;)
 
 /* NEW HOME ROW MODS */
 /* LEFT HAND MODS */
 ZMK_BEHAVIOR(hl, hold_tap,
-    flavor = "balanced";
-    tapping-term-ms = <280>;
-    quick-tap-ms = <50>; // repeat on tap-into-hold
-    global-quick-tap;
+    flavor = "tap-preferred";
+    tapping-term-ms = <150>;
+    quick-tap-ms = <125>; // repeat on tap-into-hold
     bindings = <&kp>, <&kp>;
 )
 /* RIGHT HAND MODS */
 ZMK_BEHAVIOR(hr, hold_tap,
-    flavor = "balanced";
-    tapping-term-ms = <280>;
-    quick-tap-ms = <175>; // repeat on tap-into-hold
-    global-quick-tap;
+    flavor = "tap-preferred";
+    tapping-term-ms = <150>;
+    quick-tap-ms = <125>; // repeat on tap-into-hold
     bindings = <&kp>, <&kp>;
 )
 
