@@ -71,9 +71,9 @@ ZMK_BEHAVIOR(bspc_del, hold_tap,
 /* NEW HOME ROW MODS */
 /* LEFT HAND MODS */
 ZMK_BEHAVIOR(hl, hold_tap,
-    flavor = "balanced";
+    flavor = "hold-preferred";
     tapping-term-ms = <280>;
-    quick-tap-ms = <175>; // repeat on tap-into-hold
+    quick-tap-ms = <50>; // repeat on tap-into-hold
     global-quick-tap;
     bindings = <&kp>, <&kp>;
     hold-trigger-key-positions = <KEYS_R THUMBS>;
@@ -81,7 +81,7 @@ ZMK_BEHAVIOR(hl, hold_tap,
 )
 /* RIGHT HAND MODS */
 ZMK_BEHAVIOR(hr, hold_tap,
-    flavor = "balanced";
+    flavor = "hold-preferred";
     tapping-term-ms = <280>;
     quick-tap-ms = <175>; // repeat on tap-into-hold
     global-quick-tap;
