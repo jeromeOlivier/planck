@@ -60,13 +60,13 @@ ZMK_COMBO(combo_rpar, &kp RPAR, MR10 BR9, AL, COMBO_NORM)
 /* BEHAVIORS */
 ZMK_BEHAVIOR(mup, mod_morph, mods = <(MOD_RSFT)>; bindings = <&kp C_VOL_UP>, <&kp F15>;)
 ZMK_BEHAVIOR(mdn, mod_morph, mods = <(MOD_RSFT)>; bindings = <&kp C_VOL_DN>, <&kp F14>;)
-ZMK_BEHAVIOR(bspc_del, mod_morph, mods = <(MOD_LSFT)>; bindings = <&kp BSPC>, <&kp DELETE>;)
+ZMK_BEHAVIOR(bdel, mod_morph, mods = <(MOD_LSFT)>; bindings = <&kp BSPC>, <&kp DELETE>;)
 ZMK_BEHAVIOR(bspc_del_p, hold_tap,
     flavor = "balanced";
-    tapping-term-ms = <280>;
-    quick-tap-ms = <175>;
+    tapping-term-ms = <200>;
+    quick-tap-ms = <150>;
     global-quick-tap;
-    bindings = <&bspc_del>, <&kp P>;)
+    bindings = <&kp P>, <&bdel>;)
 
 /* NEW HOME ROW MODS */
 /* LEFT HAND MODS */
@@ -92,7 +92,7 @@ ZMK_BEHAVIOR(hr, hold_tap,
 
 /* LAYERS */
 ZMK_LAYER(AL,
-&kp Q      &kp W      &kp E      &kp R       &kp T  ___  ___  &kp Y  &kp U       &kp I      &kp O      &bspc_del_p
+&kp Q      &kp W      &kp E      &kp R       &kp T  ___  ___  &kp Y  &kp U       &kp I      &kp O      &bspc_del_p 0
 &hl LCT A  &hl LAL S  &hl LCM D  &hl LSH F   &kp G  ___  ___  &kp H  &hr RSH J   &hr RCM K  &hr RAL L  &hr RCT SEMI
 &kp Z      &kp X      &kp C      &lt FN V    &kp B  ___  ___  &kp N  &kp M       &kp COMMA  &kp DOT    &kp FSLH
 ___        ___        &kp CAPS   &lt RT TAB  ___    ___  ___  ___    ___         &lt NV SP  ___        ___
