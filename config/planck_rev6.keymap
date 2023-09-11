@@ -61,7 +61,7 @@ ZMK_COMBO(combo_rpar, &kp RPAR, MR10 BR9, AL, COMBO_NORM)
 ZMK_BEHAVIOR(mup, mod_morph, mods = <(MOD_RSFT)>; bindings = <&kp C_VOL_UP>, <&kp F15>;)
 ZMK_BEHAVIOR(mdn, mod_morph, mods = <(MOD_RSFT)>; bindings = <&kp C_VOL_DN>, <&kp F14>;)
 ZMK_BEHAVIOR(bspc_del, mod_morph, mods = <(MOD_LSFT)>; bindings = <&kp BSPC>, <&kp DELETE>;)
-ZMK_BEHAVIOR(bspc_del_p, hold_tap, mods = <(MOD_LSFT)>; bindings = <&bspc_del>, <&kp P>;)
+ZMK_BEHAVIOR(bspc_del_p, hold_tap, bindings = <&bspc_del>, <&kp P>;)
 
 /* NEW HOME ROW MODS */
 /* LEFT HAND MODS */
