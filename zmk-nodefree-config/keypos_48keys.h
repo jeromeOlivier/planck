@@ -90,7 +90,7 @@
 #define ___ &none
 #define VVV &trans
 #define SP SPACE
-#define HYPR LSH LCM LAL LCT
+#define HYPR LEFT_SHIFT LEFT_GUI LEFT_ALT LEFT_CONTROL
 
 // to navigate through spaces
 #define GL LC(LEFT)
