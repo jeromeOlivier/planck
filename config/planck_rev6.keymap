@@ -84,7 +84,7 @@ ZMK_LAYER(AL,
 &kp Q      &kp W      &kp E      &kp R      &kp T    ___ ___  &kp Y     &kp U     &kp I      &kp O      &kp P
 &hl LCT A  &hl LAL S  &hl LCM D  &hl LSH F  &kp G    ___ ___  &kp H     &hr RSH J &hr RCM K  &hr RAL L  &hr RCT SEMI
 &kp Z      &kp X      &kp C      &lt FN V   &kp B    ___ ___  &kp N     &kp M     &kp COMMA  &kp DOT    &kp FSLH
-___        ___        ___        &lt RT TAB &kp CAPS ___ ___  &kp HYPR  &lt NV SP ___        ___        ___
+___        ___        &kp CAPS   &lt RT TAB ___      ___ ___  ___       &lt NV SP &kp HYPR   ___        ___
 )
 
 ZMK_LAYER(FN,
@@ -102,8 +102,8 @@ ___        ___        ___        VVV        ___      ___ ___   ___      &kp RET 
 )
 
 ZMK_LAYER(NV,
-&kp ESC    ___        &kp UP     ___        &kp LBRC ___ ___   &kp RBRC ___       ___        ___        ___
-&mup       &kp LEFT   &kp DOWN   &kp RIGHT  &kp LBKT ___ ___   &kp RBKT &kp RSH   &kp RCM    &kp RAL    &kp RCT
-&mdn       &kp GL     &kp GU     &kp GR     &kp LT   ___ ___   &kp GT   ___       ___        ___        ___
+&kp ESC    ___        &kp UP     ___        ___      ___ ___   ___      ___       ___        ___        ___
+&mup       &kp LEFT   &kp DOWN   &kp RIGHT  ___      ___ ___   ___      &kp RSH   &kp RCM    &kp RAL    &kp RCT
+&mdn       &kp GL     &kp GU     &kp GR     ___      ___ ___   ___      ___       ___        ___        ___
 ___        ___        ___        ___        ___      ___ ___   ___      VVV       ___        ___        ___
 )
