@@ -76,11 +76,6 @@
 #define RT 2
 #define NV 3
 
-// key names
-#define ___ &none
-#define VVV &trans
-#define SP SPACE
-
 // modifiers
 #define LCT LEFT_CONTROL
 #define RCT RIGHT_CONTROL
@@ -90,6 +85,12 @@
 #define RCM RIGHT_GUI
 #define LSH LEFT_SHIFT
 #define RSH RIGHT_SHIFT
+
+// key names
+#define ___ &none
+#define VVV &trans
+#define SP SPACE
+#define HYPR LSH LCM LAL LCT
 
 // to navigate through spaces
 #define GL LC(LEFT)
