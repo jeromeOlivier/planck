@@ -90,7 +90,7 @@
 #define ___ &none
 #define VVV &trans
 #define SP SPACE
-#define HYPR RS(RG(RA(RC())))
+#define HYPR RS(RC(RA(RGUI)))
 
 // to navigate through spaces
 #define GL LC(LEFT)
