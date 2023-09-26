@@ -22,36 +22,46 @@
 // left hand top row only
 ZMK_COMBO(combo_grave, &kp GRAVE, TR1 TR2, AL, COMBO_SLOW)
 ZMK_COMBO(combo_esc, &kp ESC, TR1 TR2 TR3, AL, COMBO_SLOW)
-ZMK_COMBO(combo_minus, &kp MINUS, TR2 TR3, AL RT NV, COMBO_SLOW)
-ZMK_COMBO(combo_equal, &kp EQUAL, TR3 TR4, AL RT NV, COMBO_SLOW)
+ZMK_COMBO(combo_minus, &kp MINUS, TR2 TR3, AL RT NV, COMBO_NORM)
+ZMK_COMBO(combo_equal, &kp EQUAL, TR3 TR4, AL RT NV, COMBO_NORM)
 ZMK_COMBO(combo_T, &kp T, TR1 TR4, AL, COMBO_SLOW)
 
 // left hand middle row only
 ZMK_COMBO(combo_G, &kp G, MR1 MR4, AL, COMBO_SLOW)
 
 // left hand bottom row only
+ZMK_COMBO(combo_1, &kp N1, BR1 BR2, AL, COMBO_NORM)
+ZMK_COMBO(combo_2, &kp N2, BR1 BR2 BR3, AL, COMBO_SLOW)
+ZMK_COMBO(combo_3, &kp N3, BR2 BR3, AL, COMBO_NORM)
+ZMK_COMBO(combo_4, &kp N4, BR2 BR3 BR4, AL, COMBO_SLOW)
+ZMK_COMBO(combo_5, &kp N5, BR3 BR4, AL, COMBO_NORM)
 ZMK_COMBO(combo_B, &kp B, BR1 BR4, AL, COMBO_SLOW)
 
 // left hand diagonal combos
 ZMK_COMBO(combo_lbkt, &kp LBKT, TR2 BR4, AL, COMBO_SLOW)
-ZMK_COMBO(combo_lt, &kp LT, TR2 MR3, AL, COMBO_SLOW)
-ZMK_COMBO(combo_lpar, &kp LPAR, MR3 BR4, AL, COMBO_SLOW)
+ZMK_COMBO(combo_lt, &kp LT, TR2 MR3, AL, COMBO_NORM)
+ZMK_COMBO(combo_lpar, &kp LPAR, MR3 BR4, AL, COMBO_NORM)
 
 // right hand top row only
-ZMK_COMBO(combo_sqt, &kp SQT, TR9 TR10, AL RT NV, COMBO_SLOW)
-ZMK_COMBO(combo_bslh, &kp BSLH, TR10 TR11, AL RT NV, COMBO_SLOW)
-ZMK_COMBO(combo_Y, &kp Y, TR9 TR12, AL, COMBO_SLOW)
+ZMK_COMBO(combo_sqt, &kp SQT, TR9 TR10, AL RT NV, COMBO_NORM)
+ZMK_COMBO(combo_bslh, &kp BSLH, TR10 TR11, AL RT NV, COMBO_NORM)
+ZMK_COMBO(combo_Y, &kp Y, TR9 TR12, AL, COMBO_NORM)
 
 // right hand middle row only
-ZMK_COMBO(combo_H, &kp H, MR9 MR12, AL, COMBO_SLOW)
+ZMK_COMBO(combo_H, &kp H, MR9 MR12, AL, COMBO_NORM)
 
 // right hand bottom row only
-ZMK_COMBO(combo_N, &kp N, BR9 BR12, AL, COMBO_SLOW)
+ZMK_COMBO(combo_6, &kp N6, BR9 BR10, AL, COMBO_NORM)
+ZMK_COMBO(combo_7, &kp N7, BR9 BR10 BR11, AL, COMBO_SLOW)
+ZMK_COMBO(combo_8, &kp N8, BR10 BR11, AL, COMBO_NORM)
+ZMK_COMBO(combo_9, &kp N9, BR10 BR11 BR12, AL, COMBO_SLOW)
+ZMK_COMBO(combo_0, &kp N0, BR11 BR12, AL, COMBO_NORM)
+ZMK_COMBO(combo_N, &kp N, BR9 BR12, AL, COMBO_NORM)
 
 // right hand diagonal combos
 ZMK_COMBO(combo_rbkt, &kp RBKT, TR11 BR9, AL, COMBO_SLOW)
-ZMK_COMBO(combo_gt, &kp GT, TR11 MR10, AL, COMBO_SLOW)
-ZMK_COMBO(combo_rpar, &kp RPAR, MR10 BR9, AL, COMBO_SLOW)
+ZMK_COMBO(combo_gt, &kp GT, TR11 MR10, AL, COMBO_NORM)
+ZMK_COMBO(combo_rpar, &kp RPAR, MR10 BR9, AL, COMBO_NORM)
 
 /* BEHAVIORS */
 ZMK_BEHAVIOR(mup, mod_morph, mods = <(MOD_RSFT)>; bindings = <&kp C_VOL_UP>, <&kp F15>;)
@@ -67,43 +77,43 @@ ZMK_BEHAVIOR(bspc_del, hold_tap,
 /* LEFT HAND MODS */
 ZMK_BEHAVIOR(hl, hold_tap,
     flavor = "tap-preferred";
-    tapping-term-ms = <200>;
-//    quick-tap-ms = <125>; // repeat on tap-into-hold
+    tapping-term-ms = <150>;
+    quick-tap-ms = <125>; // repeat on tap-into-hold
     bindings = <&kp>, <&kp>;
 )
 /* RIGHT HAND MODS */
 ZMK_BEHAVIOR(hr, hold_tap,
     flavor = "tap-preferred";
-    tapping-term-ms = <200>;
-//    quick-tap-ms = <125>; // repeat on tap-into-hold
+    tapping-term-ms = <150>;
+    quick-tap-ms = <125>; // repeat on tap-into-hold
     bindings = <&kp>, <&kp>;
 )
 
 /* LAYERS */
 ZMK_LAYER(AL,
-&kp Q      &kp W      &kp E      &kp R      &kp T    ___ ___  &kp Y     &kp U     &kp I      &kp O      &kp P
-&hl LCT A  &hl LAL S  &hl LCM D  &hl LSH F  &kp G    ___ ___  &kp H     &hr RSH J &hr RCM K  &hr RAL L  &hr RCT SEMI
-&kp Z      &kp X      &kp C      &lt FN V   &kp B    ___ ___  &kp N     &kp M     &kp COMMA  &kp DOT    &kp FSLH
-___        ___        &kp CAPS   &lt RT TAB ___      ___ ___  ___       &lt NV SP &kp HYPR   ___        ___
+&kp Q      &kp W      &kp E      &kp R      &kp T    ___ ___  &kp Y    &kp U     &kp I      &kp O      &bspc_del 0 P
+&hl LCT A  &hl LAL S  &hl LCM D  &hl LSH F  &kp G    ___ ___  &kp H    &hr RSH J &hr RCM K  &hr RAL L  &hr RCT SEMI
+&kp Z      &kp X      &kp C      &lt FN V   &kp B    ___ ___  &kp N    &kp M     &kp COMMA  &kp DOT    &kp FSLH
+___        ___        &lt RT TAB &lt RT TAB &kp CAPS ___ ___  ___      ___       &lt NV SP  ___        ___
 )
 
 ZMK_LAYER(FN,
 &kp ESC    ___        ___        ___        ___      ___ ___   ___      &kp F1    &kp F2     &kp F3     &kp F4
 &kp LCT    &kp LAL    &kp LCM    &kp LSH    ___      ___ ___   ___      &kp F5    &kp F6     &kp F7     &kp F8
 ___        ___        ___        VVV        ___      ___ ___   ___      &kp F9    &kp F10    &kp F11    &kp F12
-___        ___        ___        ___        ___      ___ ___   ___      ___       ___        ___        ___
+___        ___        ___        ___        ___      ___ ___   ___      ___       &kp SP     ___        ___
 )
 
 ZMK_LAYER(RT,
 &kp ESC    ___        ___        ___        ___      ___ ___   ___      &kp N1    &kp N2     &kp N3     &bdel
 &kp LCT    &kp LAL    &kp LCM    &kp LSH    ___      ___ ___   ___      &kp N4    &kp N5     &kp N6     &kp N0
 ___        ___        ___        ___        ___      ___ ___   ___      &kp N7    &kp N8     &kp N9     ___
-___        ___        ___        VVV        ___      ___ ___   ___      &kp RET   ___        ___        ___
+___        ___        VVV        VVV        ___      ___ ___   ___      ___       &kp RET    ___        ___
 )
 
 ZMK_LAYER(NV,
-&kp ESC    ___        &kp UP     ___        ___      ___ ___   ___      ___       ___        ___        ___
-&mup       &kp LEFT   &kp DOWN   &kp RIGHT  ___      ___ ___   ___      &kp RSH   &kp RCM    &kp RAL    &kp RCT
-&mdn       &kp GL     &kp GU     &kp GR     ___      ___ ___   ___      ___       ___        ___        ___
-___        ___        ___        ___        ___      ___ ___   ___      VVV       ___        ___        ___
+&kp ESC    ___        &kp UP     ___        &kp LBRC ___ ___   &kp RBRC ___       ___        ___        ___
+&mup       &kp LEFT   &kp DOWN   &kp RIGHT  &kp LBKT ___ ___   &kp RBKT &kp RSH   &kp RCM    &kp RAL    &kp RCT
+&mdn       &kp GL     &kp GU     &kp GR     &kp LT   ___ ___   &kp GT   ___       ___        ___        ___
+___        ___        ___        ___        ___      ___ ___   ___      ___       VVV        ___        ___
 )
