@@ -30,7 +30,7 @@ ZMK_COMBO(combo_equal, &kp EQUAL, TR3 TR4, AL RT NV, COMBO_NORM)
 
 
 // left hand bottom row only
-
+ZMK_COMBO(combo_tab, &kp TAB, BR3 BR4, AL, COMBO_SLOW)
 
 // left hand diagonal combos
 ZMK_COMBO(combo_lbkt, &kp LBKT, TR2 BR4, AL, COMBO_SLOW)
@@ -105,5 +105,5 @@ ZMK_LAYER(NV,
 &kp ESC    ___        &kp UP     ___        &kp LBRC ___ ___   &kp RBRC ___       ___        ___        ___
 &mup       &kp LEFT   &kp DOWN   &kp RIGHT  &kp LBKT ___ ___   &kp RBKT &kp RSH   &kp RCM    &kp RAL    &kp RCT
 &mdn       &kp GL     &kp GU     &kp GR     &kp LT   ___ ___   &kp GT   ___       ___        ___        ___
-___        ___        ___        &kp TAB    ___      ___ ___   ___      VVV       ___        ___        ___
+___        ___        ___        ___        ___      ___ ___   ___      VVV       ___        ___        ___
 )
