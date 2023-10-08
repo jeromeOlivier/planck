@@ -35,7 +35,7 @@ ZMK_COMBO(combo_tab, &kp TAB, BR3 BR4, AL, COMBO_SLOW)
 // left hand diagonal combos
 ZMK_COMBO(combo_lt,   &kp LT,   MR4 TR1, AL, COMBO_NORM)
 ZMK_COMBO(combo_lbkt, &kp LBKT, MR4 TR2, AL, COMBO_SLOW)
-ZMK_COMBO(combo_lbrc, &kp LPAR, MR4 TR3, AL, COMBO_NORM)
+ZMK_COMBO(combo_lbrc, &kp LBRC, MR4 TR3, AL, COMBO_NORM)
 ZMK_COMBO(combo_lpar, &kp LPAR, MR3 BR4, AL, COMBO_NORM)
 
 // right hand top row only
