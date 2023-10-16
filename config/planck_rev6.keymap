@@ -100,7 +100,7 @@ ZMK_LAYER(RT,
 &kp ESC    ___        ___        ___        ___      ___ ___   ___      &kp N1    &kp N2     &kp N3     &bdel
 &kp LCT    &kp LAL    &kp LCM    &kp LSH    ___      ___ ___   ___      &kp N4    &kp N5     &kp N6     &kp N0
 ___        ___        ___        ___        ___      ___ ___   ___      &kp N7    &kp N8     &kp N9     ___
-___        ___        ___        VVV        ___      ___ ___   ___      &kp RET   ___        ___        ___
+___        ___        ___        VVV        ___      ___ ___   ___      ___       &kp RET    ___        ___
 )
 
 ZMK_LAYER(NV,
