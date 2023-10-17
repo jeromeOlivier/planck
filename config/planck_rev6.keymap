@@ -104,8 +104,8 @@ ___        ___        ___        VVV        ___      ___ ___   ___      ___     
 )
 
 ZMK_LAYER(NV,
-&kp ESC    ___        &kp UP     ___        &kp LBRC ___ ___   &kp RBRC ___       ___        ___        ___
-&mup       &kp LEFT   &kp DOWN   &kp RIGHT  &kp LBKT ___ ___   &kp RBKT &kp RSH   &kp RCM    &kp RAL    &kp RCT
-&mdn       &kp GL     &kp GU     &kp GR     &kp LT   ___ ___   &kp GT   ___       ___        ___        ___
+&kp ESC    ___        &kp UP     ___        ___      ___ ___   ___      ___       ___        ___        ___
+&mup       &kp LEFT   &kp DOWN   &kp RIGHT  ___      ___ ___   ___      &kp RSH   &kp RCM    &kp RAL    &kp RCT
+&mdn       ___        ___        ___        ___      ___ ___   ___      ___       ___        ___        ___
 ___        ___        ___        ___        ___      ___ ___   ___      VVV       ___        ___        ___
 )

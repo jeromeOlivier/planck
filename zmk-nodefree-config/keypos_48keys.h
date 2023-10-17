@@ -92,11 +92,6 @@
 #define SP SPACE
 #define HYPR RS(RC(RA(RGUI)))
 
-// to navigate through spaces
-#define GL LC(LEFT)
-#define GU LC(UP)
-#define GR LC(RIGHT)
-
 // combo speeds
 #define COMBO_FAST 30
 #define COMBO_NORM 50
