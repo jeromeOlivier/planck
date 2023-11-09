@@ -83,8 +83,8 @@ ZMK_BEHAVIOR(hr, hold_tap,
 
 /* LAYERS */
 ZMK_LAYER(AL,
-&kp Q      &kp W      &kp E      &kp R      &kp T    ___ ___   &kp Y    &kp U     &kp I      &kp O      &kp P
-&hl LCT A  &hl LAL S  &hl LCM D  &hl LSH F  &kp G    ___ ___   &kp H    &hr RSH J &hr RCM K  &hr RAL L  &hr RCT SEMI
+&kp Q      &kp W      &kp D      &kp R      &kp F    ___ ___   &kp Y    &kp U     &kp I      &kp O      &kp P
+&hl LCT A  &hl LAL S  &hl LCM E  &hl LSH T  &kp G    ___ ___   &kp H    &hr RSH J &hr RCM K  &hr RAL L  &hr RCT SEMI
 &kp Z      &kp X      &kp C      &lt FN V   &kp B    ___ ___   &kp M    &kp N     &kp COMMA  &kp DOT    &kp FSLH
 ___        ___        &kp CAPS   &mo RT     ___      ___ ___   ___      &lt NV SP &kp HYPR   ___        ___
 )
