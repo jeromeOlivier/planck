@@ -83,29 +83,29 @@ ZMK_BEHAVIOR(hr, hold_tap,
 
 /* LAYERS */
 ZMK_LAYER(AL,
-&kp Q      &kp W      &kp D      &kp F      &kp K    ___ ___   &kp Y    &kp U     &kp I      &kp O      &kp P
-&hl LCT A  &hl LAL S  &hl LCM R  &hl LSH T  &kp G    ___ ___   &kp J    &hr RSH N &hr RCM E  &hr RAL L  &hr RCT SEMI
-&kp Z      &kp X      &kp C      &lt FN V   &kp B    ___ ___   &kp M    &kp H     &kp COMMA  &kp DOT    &kp FSLH
-___        ___        &kp CAPS   &mo RT     ___      ___ ___   ___      &lt NV SP &kp HYPR   ___        ___
+&kp Q      &kp W      &kp D      &kp F      &kp K ___ ___ &kp Y  &kp U      &kp I      &kp O      &kp P
+&hl LCT A  &hl LAL S  &hl LCM R  &hl LSH T  &kp G ___ ___ &kp M  &hr RSH N  &hr RCM E  &hr RAL L  &hr RCT SEMI
+&kp Z      &kp X      &kp C      &lt FN V   &kp B ___ ___ &kp J  &kp H      &kp COMMA  &kp DOT    &kp FSLH
+___        ___        &kp CAPS   &mo RT     ___   ___ ___ ___    &lt NV SP  &kp HYPR   ___        ___
 )
 
 ZMK_LAYER(FN,
-&kp ESC    ___        ___        ___        ___      ___ ___   ___      &kp F1    &kp F2     &kp F3     &kp F4
-&kp LCT    &kp LAL    &kp LCM    &kp LSH    ___      ___ ___   ___      &kp F5    &kp F6     &kp F7     &kp F8
-___        ___        ___        VVV        ___      ___ ___   ___      &kp F9    &kp F10    &kp F11    &kp F12
-___        ___        ___        ___        ___      ___ ___   ___      ___       ___        ___        ___
+&kp ESC    ___        ___        ___        ___   ___ ___ ___    &kp F1     &kp F2     &kp F3     &kp F4
+&kp LCT    &kp LAL    &kp LCM    &kp LSH    ___   ___ ___ ___    &kp F5     &kp F6     &kp F7     &kp F8
+___        ___        ___        VVV        ___   ___ ___ ___    &kp F9     &kp F10    &kp F11    &kp F12
+___        ___        ___        ___        ___   ___ ___ ___    ___        ___        ___        ___
 )
 
 ZMK_LAYER(RT,
-&kp ESC    ___        ___        ___        ___      ___ ___   ___      &kp N1    &kp N2     &kp N3     &bdel
-&kp LCT    &kp LAL    &kp LCM    &kp LSH    ___      ___ ___   ___      &kp N4    &kp N5     &kp N6     &kp N0
-___        ___        ___        ___        ___      ___ ___   ___      &kp N7    &kp N8     &kp N9     ___
-___        ___        ___        VVV        ___      ___ ___   ___      ___       &kp RET    ___        ___
+&kp ESC    ___        ___        ___        ___   ___ ___ ___    &kp N1     &kp N2     &kp N3     &bdel
+&kp LCT    &kp LAL    &kp LCM    &kp LSH    ___   ___ ___ ___    &kp N4     &kp N5     &kp N6     &kp N0
+___        ___        ___        ___        ___   ___ ___ ___    &kp N7     &kp N8     &kp N9     ___
+___        ___        ___        VVV        ___   ___ ___ ___    ___        &kp RET    ___        ___
 )
 
 ZMK_LAYER(NV,
-&kp ESC    ___        &kp UP     ___        ___      ___ ___   ___      ___       ___        ___        ___
-&mup       &kp LEFT   &kp DOWN   &kp RIGHT  ___      ___ ___   ___      &kp RSH   &kp RCM    &kp RAL    &kp RCT
-&mdn       ___        ___        ___        ___      ___ ___   ___      ___       ___        ___        ___
-___        ___        ___        ___        ___      ___ ___   ___      VVV       ___        ___        ___
+&kp ESC    ___        &kp UP     ___        ___   ___ ___ ___    ___       ___        ___        ___
+&mup       &kp LEFT   &kp DOWN   &kp RIGHT  ___   ___ ___ ___    &kp RSH   &kp RCM    &kp RAL    &kp RCT
+&mdn       ___        ___        ___        ___   ___ ___ ___    ___       ___        ___        ___
+___        ___        ___        ___        ___   ___ ___ ___    VVV       ___        ___        ___
 )
