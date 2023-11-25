@@ -81,8 +81,8 @@
 #define RCT RIGHT_CONTROL
 #define LAL LEFT_ALT
 #define RAL RIGHT_ALT
-#define LCM LEFT_GUI
-#define RCM RIGHT_GUI
+#define LGU LEFT_GUI
+#define RGU RIGHT_GUI
 #define LSH LEFT_SHIFT
 #define RSH RIGHT_SHIFT
 
