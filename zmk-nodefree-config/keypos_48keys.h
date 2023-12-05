@@ -91,6 +91,7 @@
 #define VVV &trans
 #define SP SPACE
 #define HYPR RS(RC(RA(RGUI)))
+#define CAPWRD &caps_word
 
 // combo speeds
 #define COMBO_FAST 30

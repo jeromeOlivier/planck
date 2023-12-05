@@ -65,8 +65,6 @@ ZMK_BEHAVIOR(bspc_del, hold_tap,
     quick-tap-ms = <150>;
     bindings = <&bdel>, <&kp>;)
 
-/* NEW HOME ROW MODS */
-
 /* HOME ROW MODS FAST SPEED */
 ZMK_BEHAVIOR(hr, hold_tap,
     flavor = "tap-preferred";
@@ -74,6 +72,7 @@ ZMK_BEHAVIOR(hr, hold_tap,
     quick-tap-ms = <125>; // repeat on tap-into-hold
     bindings = <&kp>, <&kp>;
 )
+
 /* HOME ROW MODS MEDIUM SPEED */
 ZMK_BEHAVIOR(hm, hold_tap,
     flavor = "tap-preferred";
@@ -81,6 +80,7 @@ ZMK_BEHAVIOR(hm, hold_tap,
     quick-tap-ms = <125>; // repeat on tap-into-hold
     bindings = <&kp>, <&kp>;
 )
+
 /* HOME ROW MODS SLOW SPEED */
 ZMK_BEHAVIOR(hs, hold_tap,
     flavor = "tap-preferred";
@@ -94,7 +94,7 @@ ZMK_LAYER(AL,
 &kp Q      &kp W      &kp F     &kp P      &kp B  ___ ___  &kp J  &kp L      &kp U      &kp Y      &kp SEMI
 &hs LCT A  &hm LAL R  &hr LGU S &hr LSH T  &kp G  ___ ___  &kp M  &hr RSH N  &hr RGU E  &hm RAL I  &hs RCT O
 &kp Z      &kp X      &kp C     &lt FN D   &kp V  ___ ___  &kp K  &kp H      &kp COMMA  &kp DOT    &kp FSLH
-___        ___        &kp CAPS  &mo RT     ___    ___ ___  ___    &lt NV SP  &kp HYPR   ___        ___
+___        ___        CAPWRD    &mo RT     ___    ___ ___  ___    &lt NV SP  &kp HYPR   ___        ___
 )
 
 ZMK_LAYER(FN,
