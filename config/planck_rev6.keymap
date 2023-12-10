@@ -44,7 +44,7 @@ ZMK_COMBO(combo_bslh, &kp BSLH, TR10 TR11, AL RT NV, COMBO_NORM)
 
 
 // right hand middle row only
-
+ZMK_COMBO(combo_comma, &kp DOT, MR9 MR11, RT, COMBO_NORM)
 
 // right hand bottom row only
 
