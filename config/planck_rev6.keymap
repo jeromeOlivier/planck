@@ -44,9 +44,9 @@ ZMK_COMBO(combo_bslh, &kp BSLH, TR10 TR11, AL RT NV, COMBO_NORM)
 
 
 // right hand middle row only
-ZMK_COMBO(combo_dot, &kp DOT, MR10 MR11, RT, COMBO_NORM)
-ZMK_COMBO(combo_comma, &kp COMMA, MR9 MR10, RT, COMBO_NORM)
-ZMK_COMBO(combo_fslh, &kp FSLH, MR9 MR11, RT, COMBO_NORM)
+ZMK_COMBO(combo_dot, &kp DOT, MR10 MR11, AL RT, COMBO_NORM)
+ZMK_COMBO(combo_comma, &kp COMMA, MR9 MR10, AL RT, COMBO_NORM)
+ZMK_COMBO(combo_fslh, &kp FSLH, MR9 MR11, AL RT, COMBO_NORM)
 
 
 // right hand bottom row only
@@ -115,7 +115,7 @@ ___        ___        ___       VVV        ___    ___ ___  ___    ___        &kp
 )
 
 ZMK_LAYER(NV,
-&kp ESC    ___        &kp UP    ___        ___    ___ ___  ___    ___       ___        ___        ___
+&kp ESC    ___        &kp UP    ___        ___    ___ ___  ___    ___       ___        ___        &bdel
 &mup       &kp LEFT   &kp DOWN  &kp RIGHT  ___    ___ ___  ___    &kp RSH   &kp RGU    &kp RAL    &kp RCT
 &mdn       ___        ___       ___        ___    ___ ___  ___    ___       ___        ___        ___
 ___        ___        ___       ___        ___    ___ ___  ___    VVV       ___        ___        ___
