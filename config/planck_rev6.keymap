@@ -55,6 +55,21 @@ ZMK_COMBO(combo_rbkt, &kp RBKT, MR9 TR11, AL, COMBO_SLOW)
 ZMK_COMBO(combo_gt,   &kp GT,   MR9 TR12, AL, COMBO_NORM)
 ZMK_COMBO(combo_rpar, &kp RPAR, BR9 MR10, AL, COMBO_NORM)
 
+/* MACROS */
+/ {
+    macros {
+        zed_em_kay: zed_em_kay {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp Z &kp M &kp K>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
+    };
+};
+
 /* BEHAVIORS */
 ZMK_BEHAVIOR(mup, mod_morph, mods = <(MOD_RSFT)>; bindings = <&kp C_VOL_UP>, <&kp F15>;)
 ZMK_BEHAVIOR(mdn, mod_morph, mods = <(MOD_RSFT)>; bindings = <&kp C_VOL_DN>, <&kp F14>;)
@@ -94,7 +109,7 @@ ZMK_LAYER(AL,
 &kp Q      &kp W      &kp F     &kp P      &kp B  ___ ___  &kp J  &kp L      &kp U      &kp Y      &kp SEMI
 &hs LCT A  &hm LAL R  &hr LGU S &hr LSH T  &kp G  ___ ___  &kp M  &hr RSH N  &hr RGU E  &hm RAL I  &hs RCT O
 &kp Z      &kp X      &kp C     &lt FN D   &kp V  ___ ___  &kp K  &kp H      &kp COMMA  &kp DOT    &kp FSLH
-___        ___        CAPWRD    &mo RT     ___    ___ ___  ___    &lt NV SP  &kp HYPR   ___        ___
+___        ___        ___       &mo RT     ___    ___ ___  ___    &lt NV SP  ___        ___        ___
 )
 
 ZMK_LAYER(FN,
@@ -107,13 +122,13 @@ ___        ___        ___       ___        ___    ___ ___  ___    ___        ___
 ZMK_LAYER(RT,
 &kp ESC    ___        ___       ___        ___    ___ ___  ___    &kp N1     &kp N2     &kp N3     &bdel
 &kp LCT    &kp LAL    &kp LGU   &kp LSH    ___    ___ ___  ___    &kp N4     &kp N5     &kp N6     &kp N0
-___        ___        ___       ___        ___    ___ ___  ___    &kp N7     &kp N8     &kp N9     ___
-___        ___        ___       VVV        ___    ___ ___  ___    ___        &kp RET    ___        ___
+___        ___        ___       ___        ___    ___ ___  ___    &kp N7     &kp N8     &kp N9     &kp RET
+___        ___        ___       VVV        ___    ___ ___  ___    &kp SP     ___        ___        ___
 )
 
 ZMK_LAYER(NV,
 &kp ESC    ___        &kp UP    ___        ___    ___ ___  ___    ___       ___        ___        &bdel
 &mup       &kp LEFT   &kp DOWN  &kp RIGHT  ___    ___ ___  ___    &kp RSH   &kp RGU    &kp RAL    &kp RCT
 &mdn       ___        ___       ___        ___    ___ ___  ___    ___       ___        ___        ___
-___        ___        ___       ___        ___    ___ ___  ___    VVV       ___        ___        ___
+___        ___        ___       &kp CAPS   ___    ___ ___  ___    VVV       ___        ___        ___
 )
